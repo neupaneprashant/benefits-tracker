@@ -2304,3 +2304,5 @@ export const CARD_BY_ID: Record<string, Card> = Object.fromEntries(
 );
 
 /* TODO: Add more regional bank card models in next phase */
+
+/* Added Amex Gold, Platinum, Everyday lineups */
