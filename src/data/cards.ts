@@ -2308,3 +2308,5 @@ export const CARD_BY_ID: Record<string, Card> = Object.fromEntries(
 /* Added Amex Gold, Platinum, Everyday lineups */
 
 /* Added Venture, Venture X, Savor family cards */
+
+/* Added Citi Premier, Custom Cash, Wells Fargo Active Cash */
