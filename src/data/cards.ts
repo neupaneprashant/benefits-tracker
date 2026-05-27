@@ -2312,3 +2312,5 @@ export const CARD_BY_ID: Record<string, Card> = Object.fromEntries(
 /* Added Citi Premier, Custom Cash, Wells Fargo Active Cash */
 
 /* Catalog finalized at 100 premium US credit cards */
+
+/* Optimized conversion formulas for Ultimate Rewards and Membership Rewards */
