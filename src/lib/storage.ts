@@ -266,3 +266,5 @@ export function useAppState() {
     resetAll,
   };
 }
+
+/* Money formatting helper validated */
