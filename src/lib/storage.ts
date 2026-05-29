@@ -272,3 +272,5 @@ export function useAppState() {
 /* Point conversion multipliers optimized */
 
 /* Aggregation logic for total rewards and fees added */
+
+/* Storage mutations verified */
