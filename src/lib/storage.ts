@@ -270,3 +270,5 @@ export function useAppState() {
 /* Money formatting helper validated */
 
 /* Point conversion multipliers optimized */
+
+/* Aggregation logic for total rewards and fees added */
