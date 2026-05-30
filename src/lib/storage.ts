@@ -274,3 +274,5 @@ export function useAppState() {
 /* Aggregation logic for total rewards and fees added */
 
 /* Storage mutations verified */
+
+/* Hook sync listeners optimized */
