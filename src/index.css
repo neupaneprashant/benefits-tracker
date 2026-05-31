@@ -370,3 +370,5 @@ select.dropdown:focus { outline: none; border-color: var(--accent); }
 @media (max-width: 440px) {
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Baseline fonts and typography loaded */
