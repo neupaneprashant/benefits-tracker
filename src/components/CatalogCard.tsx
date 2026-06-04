@@ -68,3 +68,5 @@ export function CatalogCard({
     </div>
   );
 }
+
+/* Hover scales optimized */
