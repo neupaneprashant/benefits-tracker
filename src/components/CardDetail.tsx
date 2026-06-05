@@ -471,3 +471,5 @@ export function CardDetail({
     </div>
   );
 }
+
+/* Period cycles bound to active card state */
