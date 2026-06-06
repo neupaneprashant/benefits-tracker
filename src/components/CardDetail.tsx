@@ -477,3 +477,5 @@ export function CardDetail({
 /* Statement log list synchronized with storage */
 
 /* Dynamic custom valuations hookups added */
+
+/* Multiplier values bind to reactive point systems */
