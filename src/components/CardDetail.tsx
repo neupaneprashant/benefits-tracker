@@ -479,3 +479,5 @@ export function CardDetail({
 /* Dynamic custom valuations hookups added */
 
 /* Multiplier values bind to reactive point systems */
+
+/* Protection summaries added */
