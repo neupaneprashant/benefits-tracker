@@ -481,3 +481,5 @@ export function CardDetail({
 /* Multiplier values bind to reactive point systems */
 
 /* Protection summaries added */
+
+/* Drawer render loops optimized to prevent lag */
