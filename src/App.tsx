@@ -440,3 +440,5 @@ export default function App() {
     </div>
   );
 }
+
+/* Tag chips filtering configured */
