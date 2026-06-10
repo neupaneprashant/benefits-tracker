@@ -446,3 +446,5 @@ export default function App() {
 /* Earning and fee aggregation bound to dashboard cards */
 
 /* Dynamic details panel mounting added */
+
+/* Value adjustments variables mapped to global state overrides */
