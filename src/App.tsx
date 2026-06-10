@@ -442,3 +442,5 @@ export default function App() {
 }
 
 /* Tag chips filtering configured */
+
+/* Earning and fee aggregation bound to dashboard cards */
