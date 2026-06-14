@@ -71,3 +71,5 @@ export default defineConfig([
   },
 ])
 ```
+
+<!-- Design specs walkthrough updated -->
