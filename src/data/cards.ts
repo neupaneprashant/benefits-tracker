@@ -52,20 +52,24 @@ export const CARDS: Card[] = [
     network: "Visa",
     annualFee: 95,
     color: "#0a2540",
-    rewardsSummary: "3x dining, 2x travel, 10% anniversary points bonus",
+    rewardsSummary: "5x Chase Travel, 3x dining, gas, Airbnb & streaming, $100 hotel credit",
     rewardsCurrency: "Chase Ultimate Rewards® points",
     pointValueCents: 1.5,
     categories: ["Travel", "Premium"],
     statementCredits: [
-      { id: "hotel", name: "$50 Annual Chase Travel Hotel Credit", description: "Applied to hotel bookings through Chase Travel℠.", value: 50, frequency: "annual", category: "Travel" }
+      { id: "hotel", name: "$100 Annual Chase Travel Hotel Credit", description: "Applied to hotel bookings through Chase Travel℠.", value: 100, frequency: "annual", category: "Travel" },
+      { id: "global-entry", name: "Global Entry / PreCheck / NEXUS Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
     ],
     perks: [
       { id: "dashpass", name: "DoorDash DashPass", description: "Complimentary DashPass membership (activate by adding card).", estimatedValue: 120 },
-      { id: "transfer", name: "1:1 Point Transfer", description: "Transfer Chase Ultimate Rewards® to premium airline & hotel partners (Hyatt, United).", estimatedValue: 150 }
+      { id: "transfer", name: "Point Transfer partners", description: "Transfer Chase Ultimate Rewards® to premium airline & hotel partners (Hyatt at 4:3, United at 1:1).", estimatedValue: 120 },
+      { id: "apple-tv", name: "Apple TV+ (1 Year)", description: "Complimentary one-year Apple TV subscription when activated.", estimatedValue: 120 }
     ],
     earningRates: [
       { category: "Travel via Chase Travel℠", detail: "Flights, hotels, rentals", rate: "5x" },
       { category: "Dining", detail: "Restaurants, takeout, delivery", rate: "3x" },
+      { category: "Gas & EV Charging", detail: "At domestic and international stations", rate: "3x" },
+      { category: "Vacation Homes", detail: "Includes Airbnb, Vrbo, etc.", rate: "3x" },
       { category: "Select Streaming", detail: "Popular streaming services", rate: "3x" },
       { category: "Online Groceries", detail: "Excludes Target/Walmart", rate: "3x" },
       { category: "Other Travel", detail: "Flights/hotels direct", rate: "2x" },
@@ -78,10 +82,9 @@ export const CARDS: Card[] = [
     name: "Sapphire Reserve®",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 550,
+    annualFee: 795,
     color: "#001e3d",
-
-    rewardsSummary: "3x travel & dining, 50% point boost in portal, lounge access",
+    rewardsSummary: "3x travel & dining, Points Boost, lounge access, hotel credits",
     rewardsCurrency: "Chase Ultimate Rewards® points",
     pointValueCents: 1.5,
     categories: ["Travel", "Premium", "Lifestyle"],
@@ -89,7 +92,9 @@ export const CARDS: Card[] = [
       { id: "travel", name: "$300 Annual Travel Credit", description: "Auto-applies to travel purchases (flights, trains, hotels, parking).", value: 300, frequency: "annual", category: "Travel" },
       { id: "doordash", name: "$5 Monthly DoorDash Credit", description: "Accrues monthly, must spend on DoorDash app.", value: 5, frequency: "monthly", category: "Dining" },
       { id: "clear", name: "$189 Annual CLEAR Plus Credit", description: "TSA PreCheck alternative lane program credit.", value: 189, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" },
+      { id: "edit-hotel", name: "$500 Annual 'The Edit' Hotel Credit", description: "Applied as up to $250 per booking (2-night minimum required) for stays at hotels in The Edit by Chase Travel.", value: 500, frequency: "annual", category: "Travel" },
+      { id: "select-hotel", name: "$250 Select Hotel Credit (2026)", description: "One-time annual credit for prepaid Chase Travel bookings at participating hotel brands (IHG, Montage, Pendry, etc.).", value: 250, frequency: "one-time", category: "Travel" }
     ],
     perks: [
       { id: "priority-pass", name: "Priority Pass Select", description: "Unlimited airport lounge access for cardmember + 2 guests.", estimatedValue: 429 },
@@ -461,29 +466,31 @@ export const CARDS: Card[] = [
     name: "American Express Platinum Card",
     issuer: "American Express",
     network: "Amex",
-    annualFee: 695,
+    annualFee: 895,
     color: "#4e555e",
-
-    rewardsSummary: "5x flights & prepaid hotels, unparalleled lounge access",
+    rewardsSummary: "5x flights & prepaid hotels, quarterly Resy and Lululemon credits, lounge access",
     rewardsCurrency: "Membership Rewards® points",
     pointValueCents: 1.5,
     categories: ["Travel", "Premium", "Lifestyle"],
     statementCredits: [
       { id: "uber", name: "Uber Cash", description: "$15/mo in Jan-Nov, $35 in Dec for U.S. rides or Uber Eats.", value: 15, frequency: "monthly", category: "Transit" },
-      { id: "digital", name: "Digital Entertainment Credit", description: "$20/mo at Disney Bundle, Hulu, Peacock, WSJ, NYT (enrollment req.).", value: 20, frequency: "monthly", category: "Streaming" },
-      { id: "saks", name: "Saks Fifth Avenue Credit", description: "$50 in H1, $50 in H2 for online or in-store purchases (enrollment req.).", value: 50, frequency: "semiannual", category: "Shopping" },
+      { id: "digital", name: "$25 Monthly Digital Entertainment Credit", description: "Applied to Disney Bundle, Hulu, Peacock, WSJ, NYT, Paramount+, YouTube Premium (enrollment req.).", value: 25, frequency: "monthly", category: "Streaming" },
       { id: "walmart", name: "Walmart+ Credit", description: "Full statement credit for monthly Walmart+ membership.", value: 12.95, frequency: "monthly", category: "Lifestyle" },
       { id: "equinox", name: "Equinox Credit", description: "$25/mo Equinox membership credit (enrollment req.).", value: 25, frequency: "monthly", category: "Wellness" },
       { id: "airline", name: "Airline Fee Credit", description: "Up to $200 in incidental fees with one selected airline.", value: 200, frequency: "annual", category: "Travel" },
-      { id: "hotel", name: "Hotel Credit (FHR / THC)", description: "Prepaid Fine Hotels + Resorts bookings (minimum 1 night) or THC (2 nights).", value: 200, frequency: "annual", category: "Travel" },
+      { id: "hotel", name: "$600 Hotel Credit (FHR / THC)", description: "Prepaid FHR or THC bookings, issued as $300 semi-annually (enrollment req.).", value: 300, frequency: "semiannual", category: "Travel" },
       { id: "clear", name: "CLEAR Plus Credit", description: "Annual CLEAR Plus membership.", value: 189, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" },
+      { id: "resy-dining", name: "Resy Dining Credit", description: "$100 per quarter at Resy restaurants (enrollment req.).", value: 100, frequency: "quarterly", category: "Dining" },
+      { id: "lululemon", name: "Lululemon Credit", description: "$75 per quarter for U.S. purchases at Lululemon (enrollment req.).", value: 75, frequency: "quarterly", category: "Shopping" },
+      { id: "oura-ring", name: "Oura Ring Credit", description: "$200 annual statement credit for Oura Ring (enrollment req.).", value: 200, frequency: "annual", category: "Wellness" }
     ],
     perks: [
-      { id: "centurion-lounge", name: "Amex Centurion Lounges", description: "Unlimited complimentary access to Amex Centurion & Escape lounges.", estimatedValue: 350 },
+      { id: "centurion-lounge", name: "Amex Centurion Lounges", description: "Centurion & Escape lounge access (within 5 hours of departure same day, guests travel same flight).", estimatedValue: 350 },
       { id: "priority-pass", name: "Priority Pass Select", description: "Unlimited airport lounge access (excludes restaurants).", estimatedValue: 250 },
-      { id: "delta-skyclub", name: "Delta Sky Club Access", description: "Access when flying Delta flights same day.", estimatedValue: 150 },
-      { id: "hotel-statuses", name: "Hilton & Marriott Gold Statuses", description: "Complimentary mid-tier elite status in both programs.", estimatedValue: 100 }
+      { id: "delta-skyclub", name: "Delta Sky Club Access", description: "Access when flying Delta flights same day (subject to 2026 limits).", estimatedValue: 150 },
+      { id: "hotel-statuses", name: "Hilton & Marriott Gold Statuses", description: "Complimentary mid-tier elite status in both programs.", estimatedValue: 100 },
+      { id: "signature-support", name: "Signature Support for Amex", description: "Replaced Uber VIP status: premium support line and assistance.", estimatedValue: 30 }
     ],
     earningRates: [
       { category: "Flights", detail: "Booked direct or via Amex Travel (up to $500,000/yr)", rate: "5x" },
@@ -829,8 +836,8 @@ export const CARDS: Card[] = [
     ],
     perks: [
       { id: "anniversary-miles", name: "10,000 Anniversary Miles", description: "Awarded annually starting on your first anniversary.", estimatedValue: 100 },
-      { id: "priority-pass", name: "Priority Pass Select", description: "Unlimited airport lounge access for cardmember + 2 guests.", estimatedValue: 300 },
-      { id: "cap1-lounge", name: "Capital One Lounges", description: "Access to Capital One's premium airport lounges.", estimatedValue: 100 }
+      { id: "priority-pass", name: "Priority Pass Select", description: "Complimentary lounge access for primary member (guests cost $45/visit unless $75k annual spend is met).", estimatedValue: 200 },
+      { id: "cap1-lounge", name: "Capital One Lounges", description: "Access to Capital One's premium airport lounges for primary member (guests and authorized users are charged fee).", estimatedValue: 100 }
     ],
     earningRates: [
       { category: "Hotels & Cars via Portal", detail: "Booked through Capital One Travel", rate: "10x" },
@@ -939,27 +946,7 @@ export const CARDS: Card[] = [
     ],
     protections: STANDARD_PROTECTIONS
   },
-  {
-    id: "capital-one-walmart",
-    name: "Capital One Walmart Rewards",
-    issuer: "Capital One",
-    network: "Mastercard",
-    annualFee: 0,
-    color: "#0071dc",
-    rewardsSummary: "5% back on Walmart.com, no annual fee",
-    rewardsCurrency: "Cash back",
-    pointValueCents: 1.0,
-    categories: ["Regular", "Cash Back", "No Annual Fee"],
-    statementCredits: [],
-    perks: [],
-    earningRates: [
-      { category: "Walmart.com", detail: "Online grocery pickup, delivery, items", rate: "5%" },
-      { category: "Walmart Stores", detail: "In-store purchases (first 12 mos 5% if using Walmart Pay)", rate: "2%" },
-      { category: "Travel, Dining, Gas", detail: "Broad everyday categories", rate: "2%" },
-      { category: "Everything Else", detail: "All other spend", rate: "1%" }
-    ],
-    protections: STANDARD_PROTECTIONS
-  },
+
   {
     id: "capital-one-spark-cash-plus",
     name: "Spark Cash Plus",
@@ -1028,7 +1015,7 @@ export const CARDS: Card[] = [
     network: "Mastercard",
     annualFee: 0,
     color: "#0047ba",
-    rewardsSummary: "Flat 2% back: 1% when you buy, 1% when you pay",
+    rewardsSummary: "Flat 2% back (1% buy, 1% pay) + 5% on Citi Travel bookings",
     rewardsCurrency: "Cash back",
     pointValueCents: 1.0,
     categories: ["Regular", "Cash Back", "No Annual Fee"],
@@ -1036,7 +1023,10 @@ export const CARDS: Card[] = [
     perks: [
       { id: "thankyou-points", name: "Convert to ThankYou Points", description: "Can combine rewards into Citi ThankYou program.", estimatedValue: 20 }
     ],
-    earningRates: flatCashBackRate("2%"),
+    earningRates: [
+      { category: "Citi Travel℠ bookings", detail: "Hotels, rental cars, and attractions booked via portal", rate: "5%" },
+      { category: "All other purchases", detail: "1% when you buy, 1% when you pay", rate: "2%" }
+    ],
     protections: STANDARD_PROTECTIONS
   },
   {
@@ -1173,14 +1163,16 @@ export const CARDS: Card[] = [
     name: "Citi Strata Elite℠",
     issuer: "Citi",
     network: "Mastercard",
-    annualFee: 495,
+    annualFee: 595,
     color: "#1c2833",
-    rewardsSummary: "4x travel & dining, premium lounge and flight credits",
+    rewardsSummary: "4x travel & dining, $300 hotel, splurge, and chauffeur credits",
     rewardsCurrency: "Citi ThankYou Points",
     pointValueCents: 1.5,
     categories: ["Travel", "Premium"],
     statementCredits: [
-      { id: "travel-credit", name: "$250 Annual Travel Credit", description: "Applied to flights, hotels, rentals.", value: 250, frequency: "annual", category: "Travel" },
+      { id: "hotel-credit", name: "$300 Annual Hotel Benefit", description: "$300 off a hotel stay of 2+ nights booked through Citi Travel.", value: 300, frequency: "annual", category: "Travel" },
+      { id: "splurge-credit", name: "$200 Annual Splurge Credit", description: "Up to $200 statement credit for select brands (Best Buy, American Airlines, etc.).", value: 200, frequency: "annual", category: "Shopping" },
+      { id: "blacklane-credit", name: "$200 Annual Blacklane Credit", description: "Up to $200 credit for Blacklane premium chauffeur services.", value: 200, frequency: "annual", category: "Travel" },
       { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
     ],
     perks: [
@@ -1728,23 +1720,23 @@ export const CARDS: Card[] = [
   },
   {
     id: "bilt-mastercard",
-    name: "Bilt Mastercard®",
-    issuer: "Wells Fargo",
+    name: "Bilt Mastercard® (Bilt 2.0)",
+    issuer: "Cardless",
     network: "Mastercard",
     annualFee: 0,
     color: "#1e1e1e",
-    rewardsSummary: "Earn points on rent with no fee, transfer partners, Bilt Rent Day",
+    rewardsSummary: "Earn points on rent/mortgage, transfer partners, Bilt Rent Day",
     rewardsCurrency: "Bilt Points",
     pointValueCents: 1.5,
     categories: ["Travel", "Regular", "No Annual Fee"],
     statementCredits: [],
     perks: [
-      { id: "rent-no-fee", name: "Rent Payments — 0% Fee", description: "Earn points on rent payments up to 100,000 points/yr without transaction fees.", estimatedValue: 200 },
-      { id: "bilt-transfers", name: "Bilt transfer partners", description: "Transfer to Hyatt, United, American Airlines at 1:1 ratios.", estimatedValue: 150 },
-      { id: "rent-day", name: "Bilt Rent Day Bonuses", description: "Double points on the 1st of every month.", estimatedValue: 50 }
+      { id: "rent-no-fee", name: "Rent & Mortgage Payments", description: "Earn points on rent or mortgage payments up to 100,000 points/yr without transaction fees.", estimatedValue: 200 },
+      { id: "bilt-transfers", name: "Bilt transfer partners", description: "Transfer to Hyatt, United, and other partners (Rent Day bonus capped at 100k bonus points).", estimatedValue: 150 },
+      { id: "bilt-cash", name: "Bilt Cash & Rent Day", description: "Get Bilt Cash for local spend, travel portal, fitness, and double points on the 1st of every month.", estimatedValue: 80 }
     ],
     earningRates: [
-      { category: "Rent Payments", detail: "Earn 1x points per dollar spent on rent (must use card 5x per statement period)", rate: "1x" },
+      { category: "Rent & Mortgage", detail: "Earn 1x points per dollar spent on rent/mortgage (must use card 5x per statement period)", rate: "1x" },
       { category: "Dining", detail: "Restaurants worldwide", rate: "3x" },
       { category: "Travel", detail: "Flights, hotels, rentals", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }

@@ -371,6 +371,210 @@ select.dropdown:focus { outline: none; border-color: var(--accent); }
   .summary-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ============ ABOUT & GUIDE PANEL ============ */
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 30px;
+  margin-bottom: var(--gap-grid);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.4s ease forwards;
+}
+.about-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 30%, #fff));
+}
+.about-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  gap: 16px;
+}
+.about-card-head h2 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.about-card-head p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 680px;
+}
+.about-close-btn {
+  background: var(--subtle);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: inline-grid;
+  place-items: center;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+.about-close-btn:hover {
+  background: var(--border-strong);
+  color: var(--ink);
+}
+
+.guide-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.guide-step {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 12px;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+}
+.guide-step h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.guide-step p {
+  margin: 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.concept-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.concept-badge {
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 11px;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 768px) {
+  .guide-steps {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .about-card {
+    padding: 22px;
+  }
+}
+
+/* ============ REQUEST A CARD BANNER ============ */
+.request-card-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 24px 30px;
+  margin-top: var(--gap-grid);
+  box-shadow: var(--shadow-sm);
+  gap: 20px;
+  transition: all 0.2s ease;
+  animation: fadeIn 0.4s ease forwards;
+}
+.request-card-banner:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.request-card-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.request-card-info .req-badge {
+  font-size: 26px;
+  background: var(--canvas);
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.request-card-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.request-card-info p {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.request-cta-btn {
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+  border: 1px solid var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.request-cta-btn:hover {
+  filter: brightness(1.15);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 680px) {
+  .request-card-banner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 16px;
+  }
+  .request-cta-btn {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+
+
 /* Baseline fonts and typography loaded */
 
 /* Toolbar and chip container layouts styled */

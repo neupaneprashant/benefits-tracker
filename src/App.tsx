@@ -62,6 +62,16 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<FilterCategory>("All");
   const [sortBy, setSortBy] = useState<SortOption>("fee-desc");
   const [openMap, setOpenMap] = useState<Record<string, boolean>>({});
+  const [showGuide, setShowGuide] = useState(true);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+
+  const handleEmailClick = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText("pne007@latech.edu");
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2000);
+    }
+  };
 
   /* --- Tweaks State --- */
   const [accent, setAccent] = useState("#3a468f");
@@ -158,15 +168,20 @@ export default function App() {
               <I.card style={{ stroke: "#ffffff", width: 23, height: 23 }} />
             </div>
             <div>
-              <h1>Benefits Tracker</h1>
-              <p>See the true net cost of your premium U.S. credit cards after the credits you actually capture.</p>
+              <h1>Offset</h1>
+              <p>A credit card benefits tracker to calculate your true net annual cost.</p>
             </div>
           </div>
-          {owned.length > 0 && (
-            <button className="reset-btn" onClick={resetAll}>
-              Reset data
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+            <button className="reset-btn" onClick={() => setShowGuide((prev) => !prev)} style={{ background: "transparent", border: "1px solid var(--border)", color: "var(--text)" }}>
+              {showGuide ? "Hide Guide" : "Help & Guide"}
             </button>
-          )}
+            {owned.length > 0 && (
+              <button className="reset-btn" onClick={resetAll}>
+                Reset data
+              </button>
+            )}
+          </div>
         </div>
 
         {/* Navigation Tabs */}
@@ -178,7 +193,45 @@ export default function App() {
             Browse Cards
           </button>
         </div>
-
+ 
+        {/* About & Guide Section */}
+        {showGuide && (
+          <div className="about-card">
+            <div className="about-card-head">
+              <div>
+                <h2>Audit Your Credit Cards</h2>
+                <p>
+                  Premium credit cards carry high annual fees, but they also pack hundreds of dollars in statement credits, benefits, and multipliers. 
+                  <strong>Offset</strong> is an interactive auditing sheet that helps you log the benefits you actually use to calculate the true net cost of your cards.
+                </p>
+              </div>
+              <button className="about-close-btn" onClick={() => setShowGuide(false)} title="Dismiss guide">✕</button>
+            </div>
+            <div className="guide-steps">
+              <div className="guide-step">
+                <div className="step-num">1</div>
+                <h4>Add Your Cards</h4>
+                <p>Go to the <strong>Browse Cards</strong> tab and search from over 100 premium credit cards to assemble your physical or aspirational wallet.</p>
+              </div>
+              <div className="guide-step">
+                <div className="step-num">2</div>
+                <h4>Log Captured Credits</h4>
+                <p>Under <strong>My Tracker</strong>, expand any card's drawer. Toggle or add statement credits (like dining, travel, or streaming) as you use them throughout the year.</p>
+              </div>
+              <div className="guide-step">
+                <div className="step-num">3</div>
+                <h4>Calibrate Value & Spend</h4>
+                <p>Adjust value sliders for perks based on what they are worth <em>to you</em>. Input your annual spend category estimates to dynamically calculate points cash value.</p>
+              </div>
+            </div>
+            <div className="concept-badges">
+              <span className="concept-badge">True Net Cost</span>
+              <span className="concept-badge">Statement Ledger</span>
+              <span className="concept-badge">Valuation Multipliers</span>
+            </div>
+          </div>
+        )}
+ 
         {tab === "tracker" ? (
           /* --- TRACKER BLOCK --- */
           owned.length === 0 ? (
@@ -284,22 +337,90 @@ export default function App() {
 
             {/* Grid List rendering */}
             {filteredAndSorted.length === 0 ? (
-              <div className="empty">
-                <div className="ico"><I.search style={{ width: 22, height: 22 }} /></div>
-                <h3>No cards match your search</h3>
-                <p>Try clearing your keyword search or category filters to see more cards.</p>
+              <div>
+                <div className="empty">
+                  <div className="ico"><I.search style={{ width: 22, height: 22 }} /></div>
+                  <h3>No cards match your search</h3>
+                  <p>Try clearing your keyword search or category filters to see more cards.</p>
+                </div>
+                
+                <div className="request-card-banner">
+                  <div className="request-card-info">
+                    <span className="req-badge">✨</span>
+                    <div>
+                      <h4>Can't find your card?</h4>
+                      <p>
+                        Email us at <strong style={{ color: "var(--accent)" }}>pne007@latech.edu</strong> or 
+                        submit a request to have it added to our database catalog immediately.
+                      </p>
+                    </div>
+                  </div>
+                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+                    <a
+                      href={`mailto:pne007@latech.edu?subject=Offset Card Request: ${query ? encodeURIComponent(query) : "[Card Name]"}&body=Hello Prashant,%0D%0APlease add the following card to the Offset database:%0D%0A-%20Card%20Name:%20${query ? encodeURIComponent(query) : ""}%0D%0A-%20Issuer:%20%0D%0A-%20Annual%20Fee:%20%0D%0A-%20Key%20Credits/Perks:%20`}
+                      className="request-cta-btn"
+                      onClick={handleEmailClick}
+                      style={copiedEmail ? { background: "#1f6f54", color: "#ffffff", borderColor: "#1f6f54" } : undefined}
+                    >
+                      {copiedEmail ? "✓ Email Copied!" : "Email Request"}
+                    </a>
+                    <a
+                      href={`https://github.com/neupaneprashant/benefits-tracker/issues/new?title=Card+Request:+${query ? encodeURIComponent(query) : "[Card Name]"}&body=Hello+Prashant,%0A%0APlease+add+the+following+card+to+the+Offset+database:%0A-%20Card+Name:+${query ? encodeURIComponent(query) : ""}%0A-%20Issuer:+%0A-%20Annual+Fee:+%0A-%20Key+Credits/Perks:+`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="request-cta-btn"
+                      style={{ background: "transparent", color: "var(--text)", borderColor: "var(--border)" }}
+                    >
+                      GitHub Issue
+                    </a>
+                  </div>
+                </div>
               </div>
             ) : (
-              <div className="card-grid">
-                {filteredAndSorted.map((card) => (
-                  <CatalogCard
-                    key={card.id}
-                    card={card}
-                    owned={ownedSet.has(card.id)}
-                    onAdd={handlers.addCard}
-                    onRemove={handlers.removeCard}
-                  />
-                ))}
+              <div>
+                <div className="card-grid">
+                  {filteredAndSorted.map((card) => (
+                    <CatalogCard
+                      key={card.id}
+                      card={card}
+                      owned={ownedSet.has(card.id)}
+                      onAdd={handlers.addCard}
+                      onRemove={handlers.removeCard}
+                    />
+                  ))}
+                </div>
+
+                <div className="request-card-banner">
+                  <div className="request-card-info">
+                    <span className="req-badge">✨</span>
+                    <div>
+                      <h4>Can't find your card?</h4>
+                      <p>
+                        Email us at <strong style={{ color: "var(--accent)" }}>pne007@latech.edu</strong> or 
+                        submit a request to have it added to our database catalog immediately.
+                      </p>
+                    </div>
+                  </div>
+                  <div style={{ display: "flex", gap: 10, flexWrap: "wrap", alignItems: "center" }}>
+                    <a
+                      href={`mailto:pne007@latech.edu?subject=Offset Card Request: ${query ? encodeURIComponent(query) : "[Card Name]"}&body=Hello Prashant,%0D%0APlease add the following card to the Offset database:%0D%0A-%20Card%20Name:%20${query ? encodeURIComponent(query) : ""}%0D%0A-%20Issuer:%20%0D%0A-%20Annual%20Fee:%20%0D%0A-%20Key%20Credits/Perks:%20`}
+                      className="request-cta-btn"
+                      onClick={handleEmailClick}
+                      style={copiedEmail ? { background: "#1f6f54", color: "#ffffff", borderColor: "#1f6f54" } : undefined}
+                    >
+                      {copiedEmail ? "✓ Email Copied!" : "Email Request"}
+                    </a>
+                    <a
+                      href={`https://github.com/neupaneprashant/benefits-tracker/issues/new?title=Card+Request:+${query ? encodeURIComponent(query) : "[Card Name]"}&body=Hello+Prashant,%0A%0APlease+add+the+following+card+to+the+Offset+database:%0A-%20Card+Name:+${query ? encodeURIComponent(query) : ""}%0A-%20Issuer:+%0A-%20Annual+Fee:+%0A-%20Key+Credits/Perks:+`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="request-cta-btn"
+                      style={{ background: "transparent", color: "var(--text)", borderColor: "var(--border)" }}
+                    >
+                      GitHub Issue
+                    </a>
+                  </div>
+                </div>
               </div>
             )}
           </div>

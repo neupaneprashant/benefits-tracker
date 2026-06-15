@@ -4,7 +4,7 @@ import type { Card, AppState, CardUsageState, CreditUsage, SpendAllocation, Stat
 export const KEY = "cc-benefits-tracker:v2";
 
 export const EMPTY: AppState = {
-  owned: ["chase-sapphire-reserve", "amex-platinum"], // Seed default owned cards for standard view
+  owned: [], // Start with an empty wallet by default for a clean slate
   usage: {},
 };
 
