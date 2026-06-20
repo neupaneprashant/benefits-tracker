@@ -1,4 +1,5 @@
 # 💳 Offset Cost — Credit Card Benefits Tracker
+*Last Updated: Jun 20, 2026*
 
 **Offset Cost** is an interactive, premium auditing dashboard that helps you calculate the true net cost of your premium U.S. credit cards after the statement credits, perks, and rewards you actually capture. 
 
