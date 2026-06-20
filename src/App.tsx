@@ -199,7 +199,11 @@ export default function App() {
           <div className="about-card">
             <div className="about-card-head">
               <div>
-                <h2>Audit Your Credit Cards</h2>
+                <h2>
+                  <a href="https://www.referyourchasecard.com/19x/2YO7VAY7D2" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+                    Audit Your Credit Cards
+                  </a>
+                </h2>
                 <p>
                   Premium credit cards carry high annual fees, but they also pack hundreds of dollars in statement credits, benefits, and multipliers. 
                   <strong>Offset</strong> is an interactive auditing sheet that helps you log the benefits you actually use to calculate the true net cost of your cards.
