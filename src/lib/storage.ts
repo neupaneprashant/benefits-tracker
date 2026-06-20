@@ -112,7 +112,12 @@ export function creditCaptured(card: Card, usage: Record<string, CardUsageState>
 
 export function cardEconomics(card: Card, usage: Record<string, CardUsageState>) {
   let creditsCaptured = 0;
-  card.statementCredits.forEach((c) => { creditsCaptured += creditCaptured(card, usage, c); });
+  let amortizedCredits = 0;
+  card.statementCredits.forEach((c) => { 
+    const cap = creditCaptured(card, usage, c);
+    creditsCaptured += cap; 
+    amortizedCredits += cap / (c.cycleYears || 1);
+  });
   let perkValue = 0;
   card.perks.forEach((p) => { perkValue += getPerkValue(usage, card.id, p.id); });
   const rewardsValue = rewardsForCard(card, usage);
@@ -120,24 +125,26 @@ export function cardEconomics(card: Card, usage: Record<string, CardUsageState>)
     annualFee: card.annualFee,
     rewardsValue,
     creditsCaptured,
+    amortizedCredits,
     perkValue,
     netAfterCredits: creditsCaptured - card.annualFee,
-    netAnnual: rewardsValue + creditsCaptured + perkValue - card.annualFee,
+    netAnnual: rewardsValue + amortizedCredits + perkValue - card.annualFee,
   };
 }
 
 export function walletTotals(cards: Card[], owned: string[], usage: Record<string, CardUsageState>) {
-  let fees = 0, credits = 0, perks = 0, rewards = 0;
+  let fees = 0, credits = 0, amortizedCredits = 0, perks = 0, rewards = 0;
   owned.forEach((id) => {
     const card = cards.find((c) => c.id === id);
     if (!card) return;
     const e = cardEconomics(card, usage);
     fees += e.annualFee;
     credits += e.creditsCaptured;
+    amortizedCredits += e.amortizedCredits;
     perks += e.perkValue;
     rewards += e.rewardsValue;
   });
-  return { fees, credits, perks, rewards, net: rewards + credits + perks - fees };
+  return { fees, credits, perks, rewards, net: rewards + amortizedCredits + perks - fees };
 }
 
 export function cardCounts(card: Card) {

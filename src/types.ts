@@ -35,6 +35,7 @@ export interface StatementCredit {
   value: number;
   frequency: CreditFrequency;
   category: BenefitCategory | string;
+  cycleYears?: number;
 }
 
 export interface Perk {

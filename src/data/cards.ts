@@ -58,7 +58,7 @@ export const CARDS: Card[] = [
     categories: ["Travel", "Premium"],
     statementCredits: [
       { id: "hotel", name: "$100 Annual Chase Travel Hotel Credit", description: "Applied to hotel bookings through Chase Travel℠.", value: 100, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck / NEXUS Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck / NEXUS Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "dashpass", name: "DoorDash DashPass", description: "Complimentary DashPass membership (activate by adding card).", estimatedValue: 120 },
@@ -92,7 +92,7 @@ export const CARDS: Card[] = [
       { id: "travel", name: "$300 Annual Travel Credit", description: "Auto-applies to travel purchases (flights, trains, hotels, parking).", value: 300, frequency: "annual", category: "Travel" },
       { id: "doordash", name: "$5 Monthly DoorDash Credit", description: "Accrues monthly, must spend on DoorDash app.", value: 5, frequency: "monthly", category: "Dining" },
       { id: "clear", name: "$189 Annual CLEAR Plus Credit", description: "TSA PreCheck alternative lane program credit.", value: 189, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" },
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 },
       { id: "edit-hotel", name: "$500 Annual 'The Edit' Hotel Credit", description: "Applied as up to $250 per booking (2-night minimum required) for stays at hotels in The Edit by Chase Travel.", value: 500, frequency: "annual", category: "Travel" },
       { id: "select-hotel", name: "$250 Select Hotel Credit (2026)", description: "One-time annual credit for prepaid Chase Travel bookings at participating hotel brands (IHG, Montage, Pendry, etc.).", value: 250, frequency: "one-time", category: "Travel" }
     ],
@@ -311,7 +311,7 @@ export const CARDS: Card[] = [
     pointValueCents: 1.3,
     categories: ["Travel"],
     statementCredits: [
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "checked-bag", name: "First Checked Bag Free", description: "Save up to $140 round-trip for you and a companion.", estimatedValue: 140 },
@@ -339,7 +339,7 @@ export const CARDS: Card[] = [
     categories: ["Travel", "Premium"],
     statementCredits: [
       { id: "united-credit", name: "$125 United Annual Credit", description: "Automatically applied to United flight purchases.", value: 125, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "checked-bags", name: "Two Checked Bags Free", description: "For primary cardmember and one companion.", estimatedValue: 280 },
@@ -366,7 +366,7 @@ export const CARDS: Card[] = [
     pointValueCents: 1.3,
     categories: ["Travel", "Premium", "Lifestyle"],
     statementCredits: [
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "united-club-membership", name: "United Club Membership", description: "Full access to United Clubs and participating Star Alliance lounges.", estimatedValue: 650 },
@@ -480,7 +480,7 @@ export const CARDS: Card[] = [
       { id: "airline", name: "Airline Fee Credit", description: "Up to $200 in incidental fees with one selected airline.", value: 200, frequency: "annual", category: "Travel" },
       { id: "hotel", name: "$600 Hotel Credit (FHR / THC)", description: "Prepaid FHR or THC bookings, issued as $300 semi-annually (enrollment req.).", value: 300, frequency: "semiannual", category: "Travel" },
       { id: "clear", name: "CLEAR Plus Credit", description: "Annual CLEAR Plus membership.", value: 189, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" },
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 },
       { id: "resy-dining", name: "Resy Dining Credit", description: "$100 per quarter at Resy restaurants (enrollment req.).", value: 100, frequency: "quarterly", category: "Dining" },
       { id: "lululemon", name: "Lululemon Credit", description: "$75 per quarter for U.S. purchases at Lululemon (enrollment req.).", value: 75, frequency: "quarterly", category: "Shopping" },
       { id: "oura-ring", name: "Oura Ring Credit", description: "$200 annual statement credit for Oura Ring (enrollment req.).", value: 200, frequency: "annual", category: "Wellness" }
@@ -722,7 +722,7 @@ export const CARDS: Card[] = [
       { id: "resy", name: "Delta Resy Credit", description: "$10/mo statement credit at Resy restaurants (enrollment req.).", value: 10, frequency: "monthly", category: "Dining" },
       { id: "rideshare", name: "$10 Rideshare Credit", description: "$10/mo statement credit on Lyft, Uber, etc. (enrollment req.).", value: 10, frequency: "monthly", category: "Transit" },
       { id: "stay", name: "$150 Delta Vacations Stays Credit", description: "Annual statement credit for hotel packages.", value: 150, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "companion-cert", name: "Annual Companion Certificate", description: "Domestic Main Cabin round-trip companion ticket (taxes apply).", estimatedValue: 300 },
@@ -777,7 +777,7 @@ export const CARDS: Card[] = [
     categories: ["Travel", "Premium", "Lifestyle"],
     statementCredits: [
       { id: "dining", name: "$300 Dining Credit", description: "$25/mo statement credit at restaurants worldwide.", value: 25, frequency: "monthly", category: "Dining" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "marriott-platinum", name: "Platinum Elite Status", description: "Complimentary Platinum status: lounge access, free breakfast, room upgrades.", estimatedValue: 400 },
@@ -832,7 +832,7 @@ export const CARDS: Card[] = [
     categories: ["Travel", "Premium"],
     statementCredits: [
       { id: "travel", name: "$300 Annual Travel Credit", description: "Applied to bookings made via Capital One Travel.", value: 300, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "anniversary-miles", name: "10,000 Anniversary Miles", description: "Awarded annually starting on your first anniversary.", estimatedValue: 100 },
@@ -858,7 +858,7 @@ export const CARDS: Card[] = [
     pointValueCents: 1.0,
     categories: ["Travel"],
     statementCredits: [
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "lounge-passes", name: "2 Capital One Lounge Passes", description: "Two complimentary lounge visits annually.", estimatedValue: 90 }
@@ -979,7 +979,7 @@ export const CARDS: Card[] = [
     pointValueCents: 1.0,
     categories: ["Business", "Travel"],
     statementCredits: [
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "lounge-passes", name: "2 Capital One Lounge Passes", description: "Two complimentary lounge visits annually.", estimatedValue: 90 }
@@ -1173,7 +1173,7 @@ export const CARDS: Card[] = [
       { id: "hotel-credit", name: "$300 Annual Hotel Benefit", description: "$300 off a hotel stay of 2+ nights booked through Citi Travel.", value: 300, frequency: "annual", category: "Travel" },
       { id: "splurge-credit", name: "$200 Annual Splurge Credit", description: "Up to $200 statement credit for select brands (Best Buy, American Airlines, etc.).", value: 200, frequency: "annual", category: "Shopping" },
       { id: "blacklane-credit", name: "$200 Annual Blacklane Credit", description: "Up to $200 credit for Blacklane premium chauffeur services.", value: 200, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "lounge-access", name: "Priority Pass Select Lounge Access", description: "Complimentary unlimited visits.", estimatedValue: 300 }
@@ -1307,7 +1307,7 @@ export const CARDS: Card[] = [
     categories: ["Travel"],
     statementCredits: [
       { id: "airline-incidental", name: "$100 Annual Airline Incidental Credit", description: "Statement credit for fees like baggage, lounge, seat selection.", value: 100, frequency: "annual", category: "Travel" },
-      { id: "tsa-credit", name: "TSA PreCheck / Global Entry", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel" }
+      { id: "tsa-credit", name: "TSA PreCheck / Global Entry", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "pref-rewards-premium", name: "Preferred Rewards Boost", description: "Earn up to 3.5% travel & 2.62% flat cash back with Platinum Honors.", estimatedValue: 200 }
@@ -1332,7 +1332,7 @@ export const CARDS: Card[] = [
     statementCredits: [
       { id: "travel-credits", name: "$300 Annual Airline & Incidentals Credit", description: "Statement credit for airline incidentals.", value: 300, frequency: "annual", category: "Travel" },
       { id: "lifestyle-credit", name: "$150 Lifestyle Credit", description: "For rideshare, food delivery, streaming, transit.", value: 150, frequency: "annual", category: "Lifestyle" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "priority-pass-elite", name: "Priority Pass Select", description: "Unlimited lounge visits with guest allowances.", estimatedValue: 350 },
@@ -1818,7 +1818,7 @@ export const CARDS: Card[] = [
     pointValueCents: 1.0,
     categories: ["Travel", "No Annual Fee"],
     statementCredits: [
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "lounge-visits", name: "4 Priority Pass lounge visits/yr", description: "Four complimentary airport lounge visits.", estimatedValue: 120 }
@@ -2192,7 +2192,7 @@ export const CARDS: Card[] = [
     categories: ["Travel"],
     statementCredits: [
       { id: "prime-credit", name: "Amazon Prime Credit Capability", description: "Annual statement credit for Prime membership (seasonal promo).", value: 139, frequency: "annual", category: "Streaming" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [],
     earningRates: [
@@ -2230,7 +2230,7 @@ export const CARDS: Card[] = [
     categories: ["Travel"],
     statementCredits: [
       { id: "ancillary-credit", name: "$100 Annual Domestic Airline Credit", description: "Applied to incidental airline fees.", value: 100, frequency: "annual", category: "Travel" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel" }
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [],
     earningRates: [
