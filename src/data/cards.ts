@@ -56,6 +56,7 @@ export const CARDS: Card[] = [
     rewardsCurrency: "Chase Ultimate Rewards® points",
     pointValueCents: 1.5,
     categories: ["Travel", "Premium"],
+    referralUrl: "https://www.referyourchasecard.com/19x/2YO7VAY7D2",
     statementCredits: [
       { id: "hotel", name: "$100 Annual Chase Travel Hotel Credit", description: "Applied to hotel bookings through Chase Travel℠.", value: 100, frequency: "annual", category: "Travel" },
       { id: "global-entry", name: "Global Entry / PreCheck / NEXUS Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }

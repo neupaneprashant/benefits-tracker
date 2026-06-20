@@ -425,6 +425,29 @@ export function CardDetail({
             </div>
           )}
 
+          {card.referralUrl && (
+            <div style={{ marginBottom: "16px" }}>
+              <a 
+                href={card.referralUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={{
+                  display: "inline-block",
+                  padding: "8px 16px",
+                  background: "var(--accent)",
+                  color: "#ffffff",
+                  textDecoration: "none",
+                  borderRadius: "6px",
+                  fontWeight: 600,
+                  fontSize: "13px",
+                  boxShadow: "var(--shadow-sm)"
+                }}
+              >
+                Apply for this Card
+              </a>
+            </div>
+          )}
+
           <div className="mini">
             <div className="cell"><div className="k">Annual fee</div><div className="v">{card.annualFee === 0 ? "$0" : money(card.annualFee)}</div></div>
             <div className="cell"><div className="k">Rewards value</div><div className="v good">{money(e.rewardsValue)}</div></div>

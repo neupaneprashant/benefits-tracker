@@ -73,6 +73,7 @@ export interface Card {
   protections: Protection[];
   categories: CardCategory[];
   imageUrl?: string;
+  referralUrl?: string;
 }
 
 /* ---------- Nest Usage Logs State Tree ---------- */
