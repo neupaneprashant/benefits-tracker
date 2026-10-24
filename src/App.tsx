@@ -430,7 +430,7 @@ export default function App() {
           </div>
         )}
         <div style={{ textAlign: "center", padding: "20px 0", marginTop: "40px", borderTop: "1px solid var(--border)", fontSize: "12px", color: "var(--muted)", fontWeight: 500 }}>
-          Last updated: Jun 20, 2026
+          Last updated: Oct 24, 2026
         </div>
       </div>
 

@@ -225,23 +225,23 @@ export const CARDS: Card[] = [
     name: "Southwest Rapid Rewards Plus",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 69,
+    annualFee: 99,
     color: "#304269",
-    rewardsSummary: "3,000 anniversary points, 2x Southwest purchases",
+    rewardsSummary: "Free checked bag, 3,000 anniversary points, 10% off flights",
     rewardsCurrency: "Southwest Rapid Rewards points",
     pointValueCents: 1.4,
     categories: ["Travel"],
-    statementCredits: [
-      { id: "earlybird", name: "2 EarlyBird Check-Ins", description: "Reimbursements for EarlyBird Check-In per year.", value: 50, frequency: "annual", category: "Travel" }
-    ],
+    statementCredits: [],
     perks: [
-      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "3,000 Rapid Rewards points added to your account annually.", estimatedValue: 45 }
+      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "3,000 Rapid Rewards points added to your account annually.", estimatedValue: 42 },
+      { id: "checked-bag", name: "First Checked Bag Free", description: "For you and up to 8 others on the same reservation.", estimatedValue: 140 },
+      { id: "flight-discount", name: "10% Off Southwest Flights", description: "Discount on Southwest fares (excludes Basic fares).", estimatedValue: 40 },
+      { id: "seat-boarding", name: "Seat Selection & Group 5 Boarding", description: "Standard seat within 48 hours of departure when available, plus Group 5 boarding.", estimatedValue: 30 },
+      { id: "cp-boost", name: "10,000 Companion Pass Points", description: "Boost toward Companion Pass each calendar year (Companion Pass rules change Jan 1, 2027).", estimatedValue: null }
     ],
     earningRates: [
-      { category: "Southwest Purchases", detail: "Flights, hotel partners", rate: "2x" },
-      { category: "Rapid Rewards Partners", detail: "Hotel/rental partners", rate: "2x" },
-      { category: "Local Transit & Commute", detail: "Includes rideshare", rate: "2x" },
-      { category: "Internet, Cable, Streaming", detail: "Monthly utilities", rate: "2x" },
+      { category: "Southwest Purchases", detail: "Flights and inflight purchases", rate: "2x" },
+      { category: "Gas & Grocery Stores", detail: "On the first $5,000 per year", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
     protections: PREFERRED_PROTECTIONS
@@ -251,24 +251,23 @@ export const CARDS: Card[] = [
     name: "Southwest Rapid Rewards Premier",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 99,
+    annualFee: 149,
     color: "#1c2e4a",
-    rewardsSummary: "6,000 anniversary points, no foreign transaction fees",
+    rewardsSummary: "Free checked bag, 6,000 anniversary points, 15% off flights",
     rewardsCurrency: "Southwest Rapid Rewards points",
     pointValueCents: 1.4,
     categories: ["Travel"],
-    statementCredits: [
-      { id: "earlybird", name: "2 EarlyBird Check-Ins", description: "Reimbursements for EarlyBird Check-In per year.", value: 50, frequency: "annual", category: "Travel" }
-    ],
+    statementCredits: [],
     perks: [
-      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "6,000 Rapid Rewards points added to your account annually.", estimatedValue: 90 },
+      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "6,000 Rapid Rewards points added to your account annually.", estimatedValue: 84 },
+      { id: "checked-bag", name: "First Checked Bag Free", description: "For you and up to 8 others on the same reservation.", estimatedValue: 140 },
+      { id: "flight-discount", name: "15% Off Southwest Flights", description: "Discount on Southwest fares (excludes Basic fares).", estimatedValue: 60 },
+      { id: "tqp", name: "Tier Qualifying Points", description: "1,500 TQPs for every $10,000 spent.", estimatedValue: null },
       { id: "no-fx", name: "No Foreign Transaction Fees", description: "0% FX fees internationally.", estimatedValue: 20 }
     ],
     earningRates: [
-      { category: "Southwest Purchases", detail: "Flights, hotel partners", rate: "3x" },
-      { category: "Rapid Rewards Partners", detail: "Hotel/rental partners", rate: "2x" },
-      { category: "Local Transit & Commute", detail: "Includes rideshare", rate: "2x" },
-      { category: "Internet, Cable, Streaming", detail: "Monthly utilities", rate: "2x" },
+      { category: "Southwest Purchases", detail: "Flights and inflight purchases", rate: "3x" },
+      { category: "Grocery & Restaurants", detail: "On the first $8,000 per year", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
     protections: PREFERRED_PROTECTIONS
@@ -278,24 +277,23 @@ export const CARDS: Card[] = [
     name: "Southwest Rapid Rewards Priority",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 149,
+    annualFee: 229,
     color: "#0f172a",
-    rewardsSummary: "7,500 anniversary points, $75 annual travel credit",
+    rewardsSummary: "7,500 anniversary points, Extra Legroom upgrades, 4x Southwest",
     rewardsCurrency: "Southwest Rapid Rewards points",
     pointValueCents: 1.4,
     categories: ["Travel", "Premium"],
-    statementCredits: [
-      { id: "sw-credit", name: "$75 Southwest Annual Credit", description: "Automatically applied to Southwest flight purchases.", value: 75, frequency: "annual", category: "Travel" }
-    ],
+    statementCredits: [],
     perks: [
-      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "7,500 Rapid Rewards points added to your account annually.", estimatedValue: 112 },
-      { id: "upgrades", name: "4 Upgraded Boardings", description: "Position A1-A15 boardings reimbursed when available.", estimatedValue: 120 }
+      { id: "anniversary-miles", name: "Anniversary Bonus Points", description: "7,500 Rapid Rewards points added to your account annually.", estimatedValue: 105 },
+      { id: "checked-bag", name: "First Checked Bag Free", description: "For you and up to 8 others on the same reservation.", estimatedValue: 140 },
+      { id: "seats", name: "Preferred Seats & Extra Legroom Upgrades", description: "Standard or Preferred seat at booking, plus unlimited Extra Legroom upgrades within 48 hours when available.", estimatedValue: 150 },
+      { id: "tqp", name: "Tier Qualifying Points", description: "2,500 TQPs for every $5,000 spent.", estimatedValue: null },
+      { id: "inflight", name: "25% Back Inflight", description: "25% back on inflight purchases.", estimatedValue: 10 }
     ],
     earningRates: [
-      { category: "Southwest Purchases", detail: "Flights, hotel partners", rate: "3x" },
-      { category: "Rapid Rewards Partners", detail: "Hotel/rental partners", rate: "2x" },
-      { category: "Local Transit & Commute", detail: "Includes rideshare", rate: "2x" },
-      { category: "Internet, Cable, Streaming", detail: "Monthly utilities", rate: "2x" },
+      { category: "Southwest Purchases", detail: "Flights and inflight purchases", rate: "4x" },
+      { category: "Gas & Restaurants", detail: "No annual cap", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
     protections: CHASE_ULTIMATE_PROTECTIONS
@@ -305,21 +303,28 @@ export const CARDS: Card[] = [
     name: "United Explorer",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 95,
+    annualFee: 150,
     color: "#083c6b",
-    rewardsSummary: "Free checked bag, 2 MileagePlus lounge passes annually",
+    rewardsSummary: "Free checked bag, 2 United Club passes, up to $430 in partner credits",
     rewardsCurrency: "United MileagePlus® miles",
     pointValueCents: 1.3,
     categories: ["Travel"],
     statementCredits: [
+      { id: "united-hotels", name: "United Hotels Credit", description: "Two $50 credits per year on prepaid United Hotels stays.", value: 50, frequency: "semiannual", category: "Travel" },
+      { id: "rideshare", name: "Rideshare Credit", description: "$5/mo on eligible rideshare (enrollment req.).", value: 5, frequency: "monthly", category: "Transit" },
+      { id: "instacart", name: "Instacart Credit", description: "$10/mo on Instacart, through Dec 31, 2027.", value: 10, frequency: "monthly", category: "Shopping" },
+      { id: "avis-budget", name: "Avis / Budget TravelBank Cash", description: "Two $25 TravelBank cash credits per year for Avis or Budget rentals.", value: 25, frequency: "semiannual", category: "Travel" },
+      { id: "jsx", name: "JSX Credit", description: "Up to $100 per year on JSX bookings.", value: 100, frequency: "annual", category: "Travel" },
       { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
-      { id: "checked-bag", name: "First Checked Bag Free", description: "Save up to $140 round-trip for you and a companion.", estimatedValue: 140 },
-      { id: "united-passes", name: "2 United Club One-Time Passes", description: "Complimentary lounge passes at United Clubs annually.", estimatedValue: 118 },
+      { id: "checked-bag", name: "First Checked Bag Free", description: "For you and a companion on the same reservation.", estimatedValue: 140 },
+      { id: "united-passes", name: "2 United Club One-Time Passes", description: "Annual lounge passes; cardmember must be present.", estimatedValue: 118 },
+      { id: "spend-bonus", name: "Spend Bonuses", description: "$100 TravelBank cash at $10,000/yr and a 10,000-mile award discount at $20,000/yr.", estimatedValue: null },
       { id: "priority-boarding", name: "Priority Boarding", description: "Board before standard economy.", estimatedValue: 30 }
     ],
     earningRates: [
+      { category: "United Hotels (prepaid)", detail: "Booked via United Hotels", rate: "5x" },
       { category: "United Purchases", detail: "Flights, wifi, inflight purchases", rate: "2x" },
       { category: "Dining", detail: "Restaurants & eligible delivery", rate: "2x" },
       { category: "Hotel Stays", detail: "Booked directly with hotels", rate: "2x" },
@@ -332,21 +337,28 @@ export const CARDS: Card[] = [
     name: "United Quest",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 250,
+    annualFee: 350,
     color: "#002b5c",
-    rewardsSummary: "$125 annual United credit, 2 free checked bags",
+    rewardsSummary: "$200 United TravelBank cash, 2 free checked bags, award discounts",
     rewardsCurrency: "United MileagePlus® miles",
     pointValueCents: 1.3,
     categories: ["Travel", "Premium"],
     statementCredits: [
-      { id: "united-credit", name: "$125 United Annual Credit", description: "Automatically applied to United flight purchases.", value: 125, frequency: "annual", category: "Travel" },
+      { id: "travelbank", name: "$200 United TravelBank Cash", description: "Deposited each card anniversary.", value: 200, frequency: "annual", category: "Travel" },
+      { id: "renowned-hotels", name: "Renowned Hotels Credit", description: "Up to $150 per year on prepaid Renowned Hotels and Resorts stays.", value: 150, frequency: "annual", category: "Travel" },
+      { id: "rideshare", name: "Rideshare Credit", description: "$8/mo on eligible rideshare ($12 in December; enrollment req.).", value: 8, frequency: "monthly", category: "Transit" },
+      { id: "instacart", name: "Instacart Credit", description: "$15/mo on Instacart ($10 + $5), through Dec 31, 2027.", value: 15, frequency: "monthly", category: "Shopping" },
+      { id: "avis-budget", name: "Avis / Budget TravelBank Cash", description: "Two $40 TravelBank cash credits per year for Avis or Budget rentals.", value: 40, frequency: "semiannual", category: "Travel" },
+      { id: "jsx", name: "JSX Credit", description: "Up to $150 per year on JSX bookings.", value: 150, frequency: "annual", category: "Travel" },
       { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
       { id: "checked-bags", name: "Two Checked Bags Free", description: "For primary cardmember and one companion.", estimatedValue: 280 },
-      { id: "flight-credits", name: "5,000 Mile Anniversary Award", description: "Get 5,000 miles back after taking an eligible award flight.", estimatedValue: 60 }
+      { id: "award-discount", name: "10,000-Mile Award Discount", description: "Each anniversary, plus another 10,000 miles at $20,000 annual spend.", estimatedValue: 130 },
+      { id: "pqp", name: "Premier Qualifying Points", description: "1 PQP per $20 spent (up to 18,000/yr) plus 1,000 PQPs annually.", estimatedValue: null }
     ],
     earningRates: [
+      { category: "Renowned Hotels (prepaid)", detail: "Booked via United", rate: "5x" },
       { category: "United Purchases", detail: "Flights, tickets, packages", rate: "3x" },
       { category: "Other travel", detail: "Flights, hotels, rentals, transit", rate: "2x" },
       { category: "Dining", detail: "Restaurants & eligible delivery", rate: "2x" },
@@ -357,24 +369,32 @@ export const CARDS: Card[] = [
   },
   {
     id: "united-club-infinite",
-    name: "United Club Infinite",
+    name: "United Club Card",
     issuer: "Chase",
     network: "Visa",
-    annualFee: 525,
+    annualFee: 695,
     color: "#031d3d",
-    rewardsSummary: "United Club membership, 4x United purchases",
+    rewardsSummary: "United Club membership, 4x United purchases, up to $890 in partner credits",
     rewardsCurrency: "United MileagePlus® miles",
     pointValueCents: 1.3,
     categories: ["Travel", "Premium", "Lifestyle"],
+    note: "Formerly the United Club Infinite Card.",
     statementCredits: [
+      { id: "renowned-hotels", name: "Renowned Hotels Credit", description: "Up to $200 per year on prepaid Renowned Hotels and Resorts stays.", value: 200, frequency: "annual", category: "Travel" },
+      { id: "rideshare", name: "Rideshare Credit", description: "$12/mo on eligible rideshare ($18 in December; enrollment req.).", value: 12, frequency: "monthly", category: "Transit" },
+      { id: "instacart", name: "Instacart Credit", description: "$20/mo on Instacart (two $10 credits), through Dec 31, 2027.", value: 20, frequency: "monthly", category: "Shopping" },
+      { id: "avis-budget", name: "Avis / Budget TravelBank Cash", description: "Two $50 TravelBank cash credits per year for Avis or Budget rentals.", value: 50, frequency: "semiannual", category: "Travel" },
+      { id: "jsx", name: "JSX Credit", description: "Up to $200 per year on JSX bookings.", value: 200, frequency: "annual", category: "Travel" },
       { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
     perks: [
-      { id: "united-club-membership", name: "United Club Membership", description: "Full access to United Clubs and participating Star Alliance lounges.", estimatedValue: 650 },
+      { id: "united-club-membership", name: "United Club Membership", description: "Full access to United Clubs and participating Star Alliance lounges; All Access at Premier Gold or $50,000/yr spend.", estimatedValue: 650 },
       { id: "checked-bags", name: "Two Checked Bags Free", description: "For primary cardmember and one companion.", estimatedValue: 280 },
+      { id: "award-discount", name: "Award Discounts", description: "10,000-mile award discount at $20,000 annual spend, up to twice a year.", estimatedValue: null },
       { id: "premier-access", name: "United Premier Access", description: "Priority check-in, security screening, and boarding.", estimatedValue: 150 }
     ],
     earningRates: [
+      { category: "Renowned Hotels (prepaid)", detail: "Booked via United", rate: "5x" },
       { category: "United Purchases", detail: "Flights, tickets, packages", rate: "4x" },
       { category: "Other travel", detail: "Flights, hotels, rentals, transit", rate: "2x" },
       { category: "Dining", detail: "Restaurants & eligible delivery", rate: "2x" },
@@ -445,16 +465,18 @@ export const CARDS: Card[] = [
     pointValueCents: 1.5,
     categories: ["Lifestyle", "Cash Back", "Travel", "Premium"],
     statementCredits: [
-      { id: "dining", name: "Dining Credit", description: "$10/mo at Grubhub, Resy, Goldbelly, Cheesecake Factory (enrollment req.).", value: 10, frequency: "monthly", category: "Dining" },
+      { id: "dining", name: "Dining Credit", description: "$10/mo at Grubhub, The Cheesecake Factory, Five Guys, Buffalo Wild Wings and Wonder (enrollment req.).", value: 10, frequency: "monthly", category: "Dining" },
       { id: "uber", name: "Uber Cash", description: "$10/mo for Uber rides or Uber Eats in the U.S.", value: 10, frequency: "monthly", category: "Transit" },
       { id: "dunkin", name: "Dunkin' Credit", description: "$7/mo Dunkin' credit (enrollment req.).", value: 7, frequency: "monthly", category: "Dining" },
       { id: "resy", name: "Resy Credit", description: "$50 in H1, $50 in H2 at Resy restaurants (enrollment req.).", value: 50, frequency: "semiannual", category: "Dining" }
     ],
     perks: [
       { id: "transfer", name: "Membership Rewards Transfers", description: "1:1 transfers to airline/hotel partners (Delta, British Airways).", estimatedValue: 200 },
-      { id: "hotel-collection", name: "The Hotel Collection", description: "$100 experience credit on eligible 2+ night hotel stays.", estimatedValue: 50 }
+      { id: "hotel-collection", name: "The Hotel Collection", description: "$100 experience credit on eligible 2+ night hotel stays.", estimatedValue: 50 },
+      { id: "hertz", name: "Hertz Five Star Status", description: "Complimentary Hertz Five Star status (enrollment req.).", estimatedValue: null }
     ],
     earningRates: [
+      { category: "Prepaid Hotels", detail: "Booked via Amex Travel", rate: "5x" },
       { category: "Dining", detail: "Worldwide restaurants & eligible delivery", rate: "4x" },
       { category: "U.S. Supermarkets", detail: "Up to $25,000 spend per year, then 1x", rate: "4x" },
       { category: "Flights", detail: "Booked directly or via Amex Travel", rate: "3x" },
@@ -689,12 +711,13 @@ export const CARDS: Card[] = [
     network: "Amex",
     annualFee: 150,
     color: "#1e3a5f",
-    rewardsSummary: "First checked bag free, $100 Delta flight credit capability",
+    rewardsSummary: "First checked bag free, rideshare & Delta Stays credits, $200 flight credit at $10k spend",
     rewardsCurrency: "Delta SkyMiles®",
     pointValueCents: 1.2,
     categories: ["Travel"],
     statementCredits: [
-      { id: "resy", name: "$100 Delta Resy Credit", description: "$10/mo statement credit at Resy restaurants (enrollment req.).", value: 10, frequency: "monthly", category: "Dining" }
+      { id: "rideshare", name: "Rideshare Credit", description: "$10/mo on eligible rideshare, starting after the first renewal (enrollment req.).", value: 10, frequency: "monthly", category: "Transit" },
+      { id: "stay", name: "$100 Delta Stays Credit", description: "Annual credit on prepaid Delta Stays hotel bookings.", value: 100, frequency: "annual", category: "Travel" }
     ],
     perks: [
       { id: "checked-bag", name: "Free Checked Bag", description: "Free bag for you and up to 8 companions on your reservation.", estimatedValue: 120 },
@@ -756,7 +779,7 @@ export const CARDS: Card[] = [
     ],
     perks: [
       { id: "companion-cert-first", name: "Annual Companion Certificate", description: "First Class, Comfort+, or Main Cabin domestic round-trip ticket.", estimatedValue: 500 },
-      { id: "skyclub", name: "Delta Sky Club Access", description: "Unlimited access when flying Delta (limits apply).", estimatedValue: 400 },
+      { id: "skyclub", name: "Delta Sky Club Access", description: "15 visits per Medallion Year when flying Delta; unlimited after $75,000 in calendar-year spend.", estimatedValue: 400 },
       { id: "checked-bag", name: "Free Checked Bag", description: "Free bag for primary member + companions.", estimatedValue: 120 }
     ],
     earningRates: [
@@ -837,8 +860,8 @@ export const CARDS: Card[] = [
     ],
     perks: [
       { id: "anniversary-miles", name: "10,000 Anniversary Miles", description: "Awarded annually starting on your first anniversary.", estimatedValue: 100 },
-      { id: "priority-pass", name: "Priority Pass Select", description: "Complimentary lounge access for primary member (guests cost $45/visit unless $75k annual spend is met).", estimatedValue: 200 },
-      { id: "cap1-lounge", name: "Capital One Lounges", description: "Access to Capital One's premium airport lounges for primary member (guests and authorized users are charged fee).", estimatedValue: 100 }
+      { id: "priority-pass", name: "Priority Pass Select", description: "Complimentary lounge access for primary member; guests $35/visit. Authorized users need a $125/yr add-on for their own access (since Feb 1, 2026).", estimatedValue: 200 },
+      { id: "cap1-lounge", name: "Capital One Lounges", description: "Primary member access; guests $45 per adult ($25 per child) unless you spend $75,000 in a calendar year.", estimatedValue: 100 }
     ],
     earningRates: [
       { category: "Hotels & Cars via Portal", detail: "Booked through Capital One Travel", rate: "10x" },
@@ -1407,23 +1430,26 @@ export const CARDS: Card[] = [
   },
   {
     id: "alaska-airlines",
-    name: "Alaska Airlines Visa Signature®",
+    name: "Atmos™ Rewards Ascent Visa Signature®",
     issuer: "Bank of America",
     network: "Visa",
     annualFee: 95,
     color: "#00426a",
-    rewardsSummary: "Alaska Companion Fare, free checked bag, 3x on Alaska",
-    rewardsCurrency: "Alaska Airlines Mileage Plan™ miles",
+    rewardsSummary: "$99 Companion Fare, free checked bag, 3x on Alaska & Hawaiian",
+    rewardsCurrency: "Atmos™ Rewards points",
     pointValueCents: 1.5,
     categories: ["Travel"],
+    note: "Formerly the Alaska Airlines Visa Signature® card.",
     statementCredits: [],
     perks: [
-      { id: "companion-fare", name: "Alaska's Famous Companion Fare™", description: "Companion ticket from $121 annually ($99 fare + taxes).", estimatedValue: 200 },
-      { id: "checked-bag", name: "Free Checked Bag", description: "For you and up to 6 companions on your reservation.", estimatedValue: 120 }
+      { id: "companion-fare", name: "$99 Companion Fare", description: "Each anniversary after $6,000 in prior-year spend ($99 fare + taxes from $23).", estimatedValue: 200 },
+      { id: "checked-bag", name: "Free Checked Bag", description: "For you and up to 6 companions on your reservation.", estimatedValue: 120 },
+      { id: "lounge-discount", name: "$100 Off Alaska Lounge+", description: "Discount on an annual Alaska Lounge+ membership.", estimatedValue: null },
+      { id: "inflight", name: "20% Back Inflight", description: "20% back on inflight purchases, plus preferred boarding.", estimatedValue: 10 }
     ],
     earningRates: [
-      { category: "Alaska Airlines Purchases", detail: "Flights, inflight purchases", rate: "3x" },
-      { category: "Gas, Cable, Streaming, Transit", detail: "Popular bill pays", rate: "2x" },
+      { category: "Alaska & Hawaiian Purchases", detail: "Flights, inflight purchases", rate: "3x" },
+      { category: "Gas, EV Charging, Transit", detail: "Plus cable, ride-hailing and select streaming", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
     protections: PREFERRED_PROTECTIONS
@@ -1562,7 +1588,9 @@ export const CARDS: Card[] = [
     perks: [
       { id: "miles-match", name: "Miles Match™", description: "Double all miles earned in first year automatically.", estimatedValue: 150 }
     ],
+    note: "Accounts are moving to the Capital One app and website in waves from July 27, 2026; rewards stay the same.",
     earningRates: [
+      { category: "Capital One Travel", detail: "Hotels, vacation rentals and rental cars (after migration)", rate: "5x" },
       { category: "All purchases", detail: "Earn flat miles redeemable for travel statement credits", rate: "1.5x" }
     ],
     protections: DISCOVER_STANDARD_PROTECTIONS
@@ -1720,29 +1748,111 @@ export const CARDS: Card[] = [
     protections: PREFERRED_PROTECTIONS
   },
   {
-    id: "bilt-mastercard",
-    name: "Bilt Mastercard® (Bilt 2.0)",
-    issuer: "Cardless",
+    id: "bilt-blue",
+    name: "Bilt Blue Card",
+    issuer: "Column N.A.",
     network: "Mastercard",
     annualFee: 0,
-    color: "#1e1e1e",
-    rewardsSummary: "Earn points on rent/mortgage, transfer partners, Bilt Rent Day",
+    color: "#1f3a8a",
+    rewardsSummary: "Points on rent & mortgage, 4% Bilt Cash, 1x everyday",
     rewardsCurrency: "Bilt Points",
     pointValueCents: 1.5,
     categories: ["Travel", "Regular", "No Annual Fee"],
-    statementCredits: [],
+    note: "Bilt Card 2.0, issued by Column N.A. and serviced by Cardless since Feb 2026. Only one Bilt card per person.",
+    statementCredits: [
+      { id: "welcome-bilt-cash", name: "$100 Welcome Bilt Cash", description: "Bilt Cash on approval.", value: 100, frequency: "one-time", category: "Welcome" }
+    ],
     perks: [
-      { id: "rent-no-fee", name: "Rent & Mortgage Payments", description: "Earn points on rent or mortgage payments up to 100,000 points/yr without transaction fees.", estimatedValue: 200 },
-      { id: "bilt-transfers", name: "Bilt transfer partners", description: "Transfer to Hyatt, United, and other partners (Rent Day bonus capped at 100k bonus points).", estimatedValue: 150 },
-      { id: "bilt-cash", name: "Bilt Cash & Rent Day", description: "Get Bilt Cash for local spend, travel portal, fitness, and double points on the 1st of every month.", estimatedValue: 80 }
+      { id: "bilt-cash", name: "4% Bilt Cash", description: "On everyday spend; use for rent points ($30 per 1,000 points) or Bilt perks. Only $100 rolls over each year.", estimatedValue: null },
+      { id: "bilt-transfers", name: "Bilt Transfer Partners", description: "1:1 to United, Alaska, Aeroplan, JetBlue, Hilton and more; Hyatt moves to 4:3 on Jan 1, 2027.", estimatedValue: 150 },
+      { id: "no-fx", name: "No Foreign Transaction Fees", description: "0% FX fees internationally.", estimatedValue: 20 }
     ],
     earningRates: [
-      { category: "Rent & Mortgage", detail: "Earn 1x points per dollar spent on rent/mortgage (must use card 5x per statement period)", rate: "1x" },
-      { category: "Dining", detail: "Restaurants worldwide", rate: "3x" },
-      { category: "Travel", detail: "Flights, hotels, rentals", rate: "2x" },
+      { category: "Rent & Mortgage", detail: "No fee; scales with non-housing spend (100% of rent = 1.25x), or unlock up to 1x with Bilt Cash", rate: "1.25x" },
+      { category: "Bilt Travel Hotels", detail: "Booked via Bilt Travel", rate: "3x" },
+      { category: "Bilt Travel Flights", detail: "Booked via Bilt Travel", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
-    protections: CHASE_ULTIMATE_PROTECTIONS
+    protections: [
+      { name: "Cell Phone Protection", description: "Up to $800 per claim ($50 deductible) when you pay your bill with the card." },
+      { name: "Auto Rental Coverage", description: "Secondary in the U.S., primary abroad." },
+      { name: "Purchase Assurance", description: "Covers eligible purchases against damage or theft." }
+    ]
+  },
+  {
+    id: "bilt-obsidian",
+    name: "Bilt Obsidian Card",
+    issuer: "Column N.A.",
+    network: "Mastercard",
+    annualFee: 95,
+    color: "#111827",
+    rewardsSummary: "3x dining or groceries, 2x travel, points on rent, $100 hotel credit",
+    rewardsCurrency: "Bilt Points",
+    pointValueCents: 1.5,
+    categories: ["Travel", "Lifestyle"],
+    note: "Bilt Card 2.0, issued by Column N.A. and serviced by Cardless since Feb 2026. Only one Bilt card per person.",
+    statementCredits: [
+      { id: "hotel", name: "Bilt Travel Hotel Credit", description: "Two $50 credits per year on 2+ night Bilt Travel stays.", value: 50, frequency: "semiannual", category: "Travel" },
+      { id: "welcome-bilt-cash", name: "$200 Welcome Bilt Cash", description: "Bilt Cash on approval.", value: 200, frequency: "one-time", category: "Welcome" }
+    ],
+    perks: [
+      { id: "bilt-cash", name: "4% Bilt Cash", description: "On everyday spend; use for rent points, the Points Accelerator, or Bilt perks. Only $100 rolls over each year.", estimatedValue: null },
+      { id: "accelerator", name: "Points Accelerator", description: "$200 Bilt Cash buys an extra 1x on the next $5,000 of spend, up to 5 times a year.", estimatedValue: null },
+      { id: "bilt-transfers", name: "Bilt Transfer Partners", description: "1:1 to United, Alaska, Aeroplan, JetBlue, Hilton and more; Hyatt moves to 4:3 on Jan 1, 2027.", estimatedValue: 150 }
+    ],
+    earningRates: [
+      { category: "Dining or Groceries", detail: "Your pick, changeable yearly; groceries capped at $25,000/yr", rate: "3x" },
+      { category: "Rent & Mortgage", detail: "No fee; scales with non-housing spend (100% of rent = 1.25x), or unlock up to 1x with Bilt Cash", rate: "1.25x" },
+      { category: "Bilt Travel Hotels", detail: "Booked via Bilt Travel", rate: "4x" },
+      { category: "Travel", detail: "Flights via Bilt Travel earn 3x", rate: "2x" },
+      { category: "Everything Else", detail: "All other spend", rate: "1x" }
+    ],
+    protections: [
+      { name: "Cell Phone Protection", description: "Up to $800 per claim ($50 deductible) when you pay your bill with the card." },
+      { name: "Trip Delay", description: "Up to $300 for delays over 6 hours." },
+      { name: "Trip Cancellation / Interruption", description: "Up to $2,000 per trip, $5,000 per year." },
+      { name: "Auto Rental Coverage", description: "Secondary in the U.S., primary abroad." },
+      { name: "Lost Luggage, Purchase Assurance & Extended Warranty", description: "Covers checked bags and eligible purchases." },
+      { name: "No Foreign Transaction Fees", description: "Save on exchange fees abroad." }
+    ]
+  },
+  {
+    id: "bilt-palladium",
+    name: "Bilt Palladium Card",
+    issuer: "Column N.A.",
+    network: "Mastercard",
+    annualFee: 495,
+    color: "#3a3d42",
+    rewardsSummary: "2x everything, points on rent, $400 hotel credit, Priority Pass",
+    rewardsCurrency: "Bilt Points",
+    pointValueCents: 1.5,
+    categories: ["Travel", "Premium"],
+    note: "Bilt Card 2.0, issued by Column N.A. and serviced by Cardless since Feb 2026. Only one Bilt card per person.",
+    statementCredits: [
+      { id: "hotel", name: "Bilt Travel Hotel Credit", description: "Two $200 credits per year on 2+ night Bilt Travel stays.", value: 200, frequency: "semiannual", category: "Travel" },
+      { id: "annual-bilt-cash", name: "$200 Annual Bilt Cash", description: "Posted each year, including the first.", value: 200, frequency: "annual", category: "Statement Credit" },
+      { id: "welcome-bilt-cash", name: "$300 Welcome Bilt Cash", description: "Bilt Cash on approval.", value: 300, frequency: "one-time", category: "Welcome" }
+    ],
+    perks: [
+      { id: "priority-pass", name: "Priority Pass Select", description: "Lounge access with 2 guests per visit (no restaurants), also for authorized users.", estimatedValue: 469 },
+      { id: "welcome-bonus", name: "Welcome Bonus + Gold Status", description: "50,000 points and Bilt Gold status after $4,000 in everyday spend in 90 days.", estimatedValue: 750 },
+      { id: "accelerator", name: "Points Accelerator", description: "$200 Bilt Cash buys an extra 1x on the next $5,000 of spend, up to 5 times a year.", estimatedValue: null },
+      { id: "bilt-transfers", name: "Bilt Transfer Partners", description: "1:1 to United, Alaska, Aeroplan, JetBlue, Hilton and more; Hyatt moves to 4:3 on Jan 1, 2027.", estimatedValue: 150 }
+    ],
+    earningRates: [
+      { category: "Bilt Travel Hotels", detail: "Booked via Bilt Travel", rate: "4x" },
+      { category: "Bilt Travel Flights", detail: "Booked via Bilt Travel", rate: "3x" },
+      { category: "Everything Else", detail: "All non-housing spend, plus 4% Bilt Cash", rate: "2x" },
+      { category: "Rent & Mortgage", detail: "No fee; scales with non-housing spend (100% of rent = 1.25x), or unlock up to 1x with Bilt Cash", rate: "1.25x" },
+    ],
+    protections: [
+      { name: "Cell Phone Protection", description: "Up to $800 per claim ($50 deductible) when you pay your bill with the card." },
+      { name: "Trip Delay & Cancellation", description: "Trip delay up to $300 after 6 hours; cancellation/interruption up to $2,000 per trip." },
+      { name: "Baggage Delay & Lost Luggage", description: "Baggage delay up to $250 (2 claims/yr); lost luggage up to $1,500." },
+      { name: "Auto Rental Coverage", description: "Secondary in the U.S., primary abroad." },
+      { name: "Purchase Assurance, Extended Warranty & Price Drop", description: "Covers eligible purchases." },
+      { name: "No Foreign Transaction Fees", description: "Save on exchange fees abroad." }
+    ]
   },
   {
     id: "wf-attune",
@@ -1966,17 +2076,19 @@ export const CARDS: Card[] = [
     network: "Mastercard",
     annualFee: 99,
     color: "#9c1f60",
-    rewardsSummary: "Annual companion discount, free checked bag on Hawaiian",
-    rewardsCurrency: "HawaiianMiles®",
-    pointValueCents: 1.0,
+    rewardsSummary: "Earns Atmos™ Rewards, 2 free checked bags, $100 companion discount",
+    rewardsCurrency: "Atmos™ Rewards points",
+    pointValueCents: 1.5,
     categories: ["Travel"],
+    note: "Barclays no longer lists this card on its own site; new applications go through Bank of Hawaii. HawaiianMiles merged into Atmos Rewards in Oct 2025.",
     statementCredits: [],
     perks: [
-      { id: "companion-discount", name: "Annual $100 Companion Discount", description: "For roundtrip coach travel between Hawaii and North America.", estimatedValue: 100 },
-      { id: "checked-bag", name: "First Checked Bag Free", description: "Save on checked bag fees for Hawaiian flights.", estimatedValue: 60 }
+      { id: "companion-discount", name: "Annual $100 Companion Discount", description: "After each account anniversary, plus a one-time 50% off companion fare.", estimatedValue: 100 },
+      { id: "checked-bag", name: "Two Checked Bags Free", description: "For the primary cardholder on eligible Hawaiian and Alaska flights.", estimatedValue: 120 },
+      { id: "no-fx", name: "No Foreign Transaction Fees", description: "0% FX fees internationally.", estimatedValue: 20 }
     ],
     earningRates: [
-      { category: "Hawaiian Airlines Purchases", detail: "Direct flight tickets", rate: "3x" },
+      { category: "Hawaiian & Alaska Purchases", detail: "Eligible airline purchases", rate: "3x" },
       { category: "Gas, Dining, Groceries", detail: "Everyday spending categories", rate: "2x" },
       { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
@@ -2182,23 +2294,27 @@ export const CARDS: Card[] = [
   },
   {
     id: "navyfed-flagship",
-    name: "Navy Federal Flagship Rewards",
+    name: "Navy Federal Flagship Premier",
     issuer: "Navy Federal",
     network: "Visa",
-    annualFee: 49,
+    annualFee: 95,
     color: "#001e3d",
-    rewardsSummary: "Flat 2x rewards on all spend, 3x travel, Amazon Prime credit",
+    rewardsSummary: "4x travel, 3x dining, $100 airline credit, metal card",
     rewardsCurrency: "Navy Federal Points",
     pointValueCents: 1.0,
     categories: ["Travel"],
+    note: "Refreshed in Sept 2026 (formerly Flagship Rewards, $49). Complimentary Amazon Prime was removed.",
     statementCredits: [
-      { id: "prime-credit", name: "Amazon Prime Credit Capability", description: "Annual statement credit for Prime membership (seasonal promo).", value: 139, frequency: "annual", category: "Streaming" },
-      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 100, frequency: "one-time", category: "Travel", cycleYears: 4 }
+      { id: "airline-credit", name: "$100 Airline Credit", description: "Annual statement credit on airline purchases.", value: 100, frequency: "annual", category: "Travel" },
+      { id: "global-entry", name: "Global Entry / PreCheck Credit", description: "Application fee credit once every 4 years.", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
     ],
-    perks: [],
+    perks: [
+      { id: "gigsky", name: "GigSky Global Data", description: "Complimentary 3 GB global data plan.", estimatedValue: 20 }
+    ],
     earningRates: [
-      { category: "Travel", detail: "Flights, hotels, rentals, cruises", rate: "3x" },
-      { category: "Everything Else", detail: "Unlimited flat-rate cash back", rate: "2x" }
+      { category: "Travel", detail: "Airfare, hotels, rideshare, parking and more", rate: "4x" },
+      { category: "Dining", detail: "Restaurants", rate: "3x" },
+      { category: "Everything Else", detail: "All other spend", rate: "1x" }
     ],
     protections: CHASE_ULTIMATE_PROTECTIONS
   },
