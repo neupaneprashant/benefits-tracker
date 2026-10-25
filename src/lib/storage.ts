@@ -8,14 +8,25 @@ export const EMPTY: AppState = {
   usage: {},
 };
 
+// Retired card ids mapped to their replacements so saved wallets carry over.
+const RENAMED_IDS: Record<string, string> = {
+  "bilt-mastercard": "bilt-blue",
+};
+
 export function load(): AppState {
   try {
     const raw = localStorage.getItem(KEY);
     if (!raw) return EMPTY;
     const p = JSON.parse(raw);
+    const owned: string[] = (Array.isArray(p.owned) ? p.owned : []).map((id: string) => RENAMED_IDS[id] || id);
+    const usage: Record<string, CardUsageState> = { ...(p.usage || {}) };
+    for (const [from, to] of Object.entries(RENAMED_IDS)) {
+      if (usage[from] && !usage[to]) usage[to] = usage[from];
+      delete usage[from];
+    }
     return {
-      owned: Array.isArray(p.owned) ? p.owned : [],
-      usage: p.usage || {},
+      owned: Array.from(new Set(owned)),
+      usage,
     };
   } catch {
     return EMPTY;
