@@ -32,6 +32,19 @@ const AMEX_PREMIUM_PROTECTIONS: Protection[] = [
   { name: "No Foreign Transaction Fees", description: "Save on exchange fees abroad." }
 ];
 
+// Hilton coverage: Amex product pages and linked benefit guides, as of 2026-10-27.
+// https://www.americanexpress.com/us/credit-cards/features-benefits/policies/extended-warranty-terms.html
+const HILTON_STANDARD_PROTECTIONS: Protection[] = [
+  { name: "Auto Rental Collision Damage Waiver", description: "Secondary theft/damage coverage when you pay for the entire eligible rental and decline CDW. No liability coverage; Australia, Italy and New Zealand excluded." },
+  { name: "Purchase Protection", description: "Eligible purchases covered against theft or accidental damage for 90 days: up to $1,000 per purchase and $50,000 per calendar year." },
+  { name: "Extended Warranty", description: "Up to 1 additional year on eligible original warranties of 5 years or less; up to $10,000 per item and $50,000 per calendar year. Terms and exclusions apply." }
+];
+
+const HILTON_PREFERRED_PROTECTIONS: Protection[] = [
+  ...HILTON_STANDARD_PROTECTIONS,
+  { name: "Baggage Insurance Plan", description: "Up to $1,250 for carry-on and $500 for checked baggage lost, damaged or stolen, in excess of carrier coverage, when the entire common-carrier fare is charged to the card. Terms and state limits apply." }
+];
+
 const DISCOVER_STANDARD_PROTECTIONS: Protection[] = [
   ...STANDARD_PROTECTIONS,
   { name: "Identity Theft Alerts", description: "Monitors dark web and alerts you of potential compromises." },
@@ -671,9 +684,13 @@ export const CARDS: Card[] = [
     ],
     protections: PREFERRED_PROTECTIONS
   },
+  // As of 2026-10-27: https://www.hilton.com/en/hilton-honors/credit-cards/
+  // https://www.americanexpress.com/us/credit-cards/card/hilton-honors/
+  // https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/hil/hilton-honors-credit-card/ep-hil-28991?print=false
+  // Amex's product page omits extended warranty; its application terms and benefit guide include it.
   {
     id: "amex-hilton-honors",
-    name: "Hilton Honors Amex",
+    name: "Hilton Honors American Express Card",
     issuer: "American Express",
     network: "Amex",
     annualFee: 0,
@@ -684,19 +701,30 @@ export const CARDS: Card[] = [
     categories: ["Travel", "No Annual Fee"],
     statementCredits: [],
     perks: [
-      { id: "hilton-status", name: "Hilton Honors Silver Status", description: "Complimentary Silver status; Gold after $20,000 in calendar-year spend.", estimatedValue: 20 },
-      { id: "no-fx", name: "No Foreign Transaction Fees", description: "0% FX fees internationally.", estimatedValue: 20 }
+      { id: "hilton-status", name: "Hilton Honors Silver Status", description: "Complimentary Silver: 20% bonus on stay Base Points, fifth night free on eligible all-points standard-room stays, bottled water at select hotels and 15% off participating all-inclusive spas.", estimatedValue: 20 },
+      { id: "hilton-gold-spend", name: "Gold Status at $20,000 Spend", description: "Spend $20,000 in eligible purchases in a calendar year for Gold status through the end of the following calendar year.", estimatedValue: null },
+      { id: "no-fx", name: "No Foreign Transaction Fees", description: "0% FX fees internationally.", estimatedValue: 20 },
+      { id: "global-assist", name: "Global Assist Hotline", description: "24/7 emergency coordination and medical/legal referrals when more than 100 miles from home. Third-party service costs are your responsibility.", estimatedValue: null },
+      { id: "amex-offers-tickets", name: "Amex Offers & Special Ticket Access", description: "Enroll in eligible Amex Offers for purchase-specific rewards; access select presale and reserved tickets, subject to availability and ticket costs.", estimatedValue: null },
+      { id: "venue-collection", name: "American Express Venue Collection", description: "Select venue entrances/fast lanes. Through Dec 31, 2026, enroll one eligible Amex card per member for 10% back on qualifying concessions, up to $250 total; do not count this offer on multiple cards.", estimatedValue: null },
+      { id: "account-tools", name: "Amex Account & Payment Tools", description: "Additional cards, optional spending limits, account managers, year-end summaries and eligible instant card numbers. Send & Split with Venmo/PayPal requires enrollment; Pay It / Plan It available on eligible purchases (Plan It fees apply).", estimatedValue: null },
+      { id: "amex-travel", name: "Amex Travel Booking Benefits", description: "Lowest Hotel Rates Guarantee on qualifying public hotel rates booked through Amex Travel, subject to matching-rate and claim deadlines; excludes FHR/Hotel Collection and package rates. Destination Family offers on eligible cruises/tours vary by provider and require the cardholder to travel.", estimatedValue: null },
+      { id: "welcome-offer", name: "Limited-Time Welcome Offer", description: "Hilton's public offer through Jan 13, 2027: 70,000 bonus points plus a Free Night Reward after $2,000 in eligible purchases in the first 6 months. Eligibility restrictions apply; offers vary. One-time bonus, not an annual benefit.", estimatedValue: null }
     ],
     earningRates: [
-      { category: "Hilton Properties", detail: "Stays within the Hilton portfolio", rate: "7x" },
-      { category: "Dining, Gas, Supermarkets", detail: "Includes U.S. locations", rate: "5x" },
-      { category: "Everything Else", detail: "All other spend", rate: "3x" }
+      { category: "Hilton Properties", detail: "Eligible purchases charged directly by Hilton properties; excludes separate Hilton membership/status points", rate: "7x" },
+      { category: "Dining, Gas, Supermarkets", detail: "U.S. restaurants (including takeout/delivery), U.S. gas stations and U.S. supermarkets only", rate: "5x" },
+      { category: "Everything Else", detail: "All other eligible purchases", rate: "3x" }
     ],
-    protections: STANDARD_PROTECTIONS
+    protections: HILTON_STANDARD_PROTECTIONS
   },
+  // As of 2026-10-27: https://www.hilton.com/en/hilton-honors/credit-cards/
+  // https://www.americanexpress.com/us/credit-cards/card/hilton-honors-surpass/
+  // https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/hil/hilton-honors-surpass-credit-card/ep-hscc-10228?print=false
+  // $150 ongoing annual fee; Amex also advertises offer-dependent first-year fee waivers.
   {
     id: "amex-hilton-surpass",
-    name: "Hilton Honors Surpass®",
+    name: "Hilton Honors American Express Surpass® Card",
     issuer: "American Express",
     network: "Amex",
     annualFee: 150,
@@ -706,19 +734,120 @@ export const CARDS: Card[] = [
     pointValueCents: 0.5,
     categories: ["Travel", "Premium"],
     statementCredits: [
-      { id: "hilton-credit", name: "$200 Hilton Quarter Credit", description: "$50 per quarter applied to Hilton property spend.", value: 50, frequency: "quarterly", category: "Travel" }
+      { id: "hilton-credit", name: "Hilton Credit", description: "Up to $50 each calendar quarter ($200/year) for eligible bookings made through Hilton and purchases charged directly by Hilton portfolio properties. Charge incidentals to your room and pay with the card; third-party bookings excluded.", value: 50, frequency: "quarterly", category: "Travel" }
     ],
     perks: [
-      { id: "hilton-gold", name: "Hilton Honors Gold Status", description: "Complimentary breakfast or food/beverage credit at Hilton hotels.", estimatedValue: 150 },
-      { id: "free-night", name: "Free Night Reward Capability", description: "Earn a Free Night Award after spending $15,000 in a calendar year; Diamond status at $40,000.", estimatedValue: 50 }
+      { id: "hilton-gold", name: "Hilton Honors Gold Status", description: "80% bonus on stay Base Points, space-available upgrades and daily food/beverage credit or continental breakfast (brand/region rules apply). Includes Silver benefits such as fifth night free on eligible all-points standard-room stays.", estimatedValue: 150 },
+      { id: "free-night", name: "Free Night Reward at $15,000 Spend", description: "One reward after $15,000 in eligible calendar-year purchases. Valid for a standard double-occupancy room at participating properties, subject to availability/exclusions; expires 1 year after issuance.", estimatedValue: null },
+      { id: "hilton-diamond-spend", name: "Diamond Status at $40,000 Spend", description: "Spend $40,000 in eligible purchases in a calendar year for Diamond status through the end of the following calendar year.", estimatedValue: null },
+      { id: "national-executive", name: "National Emerald Club Executive Status", description: "Enroll through your Amex account for Executive status, including Executive Area access on qualifying rentals in the U.S. and Canada. Rental terms and availability apply.", estimatedValue: null },
+      { id: "no-fx", name: "No Foreign Transaction Fees", description: "No Amex foreign transaction fees on purchases abroad.", estimatedValue: null },
+      { id: "global-assist", name: "Global Assist Hotline", description: "24/7 emergency coordination and medical/legal referrals when more than 100 miles from home. Third-party service costs are your responsibility.", estimatedValue: null },
+      { id: "amex-offers-tickets", name: "Amex Offers & Special Ticket Access", description: "Eligible purchase-specific Amex Offers require enrollment. Select presale, reserved and Preferred Tickets are available for purchase, subject to availability.", estimatedValue: null },
+      { id: "venue-collection", name: "American Express Venue Collection", description: "Select venue entrances/fast lanes. Through Dec 31, 2026, enroll one eligible Amex card per member for 10% back on qualifying concessions, up to $250 total; do not count this offer on multiple cards.", estimatedValue: null },
+      { id: "account-tools", name: "Amex Account & Payment Tools", description: "Additional cards, optional spending limits, account managers, year-end summaries and eligible instant card numbers. Send & Split with Venmo/PayPal requires enrollment; Pay It / Plan It available on eligible purchases (Plan It fees apply).", estimatedValue: null },
+      { id: "amex-travel", name: "Amex Travel Booking Benefits", description: "Lowest Hotel Rates Guarantee on qualifying public hotel rates booked through Amex Travel, subject to matching-rate and claim deadlines; excludes FHR/Hotel Collection and package rates. Destination Family offers on eligible cruises/tours vary by provider and require the cardholder to travel.", estimatedValue: null },
+      { id: "welcome-offer", name: "Limited-Time Welcome Offer", description: "Hilton's public offer through Jan 13, 2027: 130,000 bonus points plus a Free Night Reward after $3,000 in eligible purchases in the first 6 months. Eligibility restrictions apply; offers vary. One-time bonus, not an annual benefit.", estimatedValue: null }
     ],
     earningRates: [
-      { category: "Hilton Properties", detail: "Stays within the Hilton portfolio", rate: "12x" },
-      { category: "Dining, Gas, Supermarkets", detail: "Includes U.S. locations", rate: "6x" },
-      { category: "U.S. Online Retail", detail: "Online purchases from U.S. merchants", rate: "4x" },
-      { category: "Everything Else", detail: "All other spend", rate: "3x" }
+      { category: "Hilton Properties", detail: "Eligible purchases charged directly by Hilton properties; excludes separate Hilton membership/status points", rate: "12x" },
+      { category: "Dining, Gas, Supermarkets", detail: "U.S. restaurants (including takeout/delivery), U.S. gas stations and U.S. supermarkets only", rate: "6x" },
+      { category: "U.S. Online Retail", detail: "Eligible U.S. online retail purchases; merchant/category exclusions apply", rate: "4x" },
+      { category: "Everything Else", detail: "All other eligible purchases", rate: "3x" }
     ],
-    protections: PREFERRED_PROTECTIONS
+    protections: HILTON_PREFERRED_PROTECTIONS
+  },
+  // As of 2026-10-27: https://www.hilton.com/en/hilton-honors/credit-cards/
+  // https://www.americanexpress.com/us/credit-cards/card/hilton-honors-aspire/
+  // https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/personal-card/hil/hilton-honors-aspire-credit-card/ep-hil-28891?print=false
+  // CLEAR+ is currently $219; the $100 property credit is per eligible booking, not annual.
+  {
+    id: "amex-hilton-aspire",
+    name: "Hilton Honors American Express Aspire Card",
+    issuer: "American Express",
+    network: "Amex",
+    annualFee: 550,
+    color: "#172b4d",
+    rewardsSummary: "14x Hilton, Diamond status, annual free night, $400 resort + $200 flight credits",
+    rewardsCurrency: "Hilton Honors points",
+    pointValueCents: 0.5,
+    categories: ["Travel", "Premium"],
+    statementCredits: [
+      { id: "hilton-resort", name: "Hilton Resort Credit", description: "Up to $200 in Jan–Jun and $200 in Jul–Dec ($400/year) at participating Hilton resorts only. Charge incidentals to your room and pay directly with the card. Advance purchase/non-refundable rates and SLH properties excluded.", value: 200, frequency: "semiannual", category: "Travel" },
+      { id: "flight", name: "Flight Credit", description: "Up to $50 each calendar quarter ($200/year) on eligible airfare purchased directly from an airline, through AmexTravel.com or the Amex Travel App. Excludes charter/private flights and vacation packages.", value: 50, frequency: "quarterly", category: "Travel" },
+      { id: "clear", name: "CLEAR+ Credit", description: "Up to $219 per calendar year when you pay for an annual CLEAR+ membership with the card. CLEAR enrollment required; membership auto-renews. Applicable taxes/fees may not be covered.", value: 219, frequency: "annual", category: "Travel" }
+    ],
+    perks: [
+      { id: "hilton-diamond", name: "Hilton Honors Diamond Status", description: "100% bonus on stay Base Points, premium Wi-Fi, space-available upgrades (up to suites), executive hotel lounge access and food/beverage credit or breakfast at eligible brands. Includes fifth night free on eligible all-points standard-room stays; brand/region rules apply.", estimatedValue: null },
+      { id: "free-night", name: "Annual Free Night Reward", description: "One reward in your first membership year and each renewal year. Valid for a standard double-occupancy room at participating properties, subject to availability/exclusions; expires 1 year after issuance.", estimatedValue: null },
+      { id: "spend-free-nights", name: "Additional Free Nights at $30,000 / $60,000 Spend", description: "Earn a second Free Night Reward at $30,000 and a third at $60,000 total eligible purchases in the same calendar year. Same standard-room availability, exclusions and 1-year expiry apply.", estimatedValue: null },
+      { id: "property-credit", name: "$100 Waldorf Astoria / Conrad Property Credit", description: "Up to $100 per eligible 2+ night booking via HiltonHonorsAspireCard.com using the Aspire Card Benefit rate, or Hilton by phone with code ZZAAP1. Applied to qualifying incidentals on the hotel bill at checkout; excludes room rates, taxes, fees and gratuities. Consecutive stays within 24 hours count as one.", estimatedValue: null },
+      { id: "national-executive", name: "National Emerald Club Executive Status", description: "Enroll through your Amex account for Executive status, including Executive Area access on qualifying rentals in the U.S. and Canada. Rental terms and availability apply.", estimatedValue: null },
+      { id: "concierge", name: "American Express Concierge", description: "Assistance with eligible dining reservations, event tickets, travel inquiries and shopping requests. You pay for purchases and third-party charges.", estimatedValue: null },
+      { id: "global-dining", name: "Global Dining Access by Resy", description: "Add the card to your Resy profile for exclusive reservations, Priority Notify and select dining experiences. Availability and restaurant cancellation fees apply.", estimatedValue: null },
+      { id: "premium-global-assist", name: "Premium Global Assist Hotline", description: "24/7 emergency coordination when more than 100 miles from home. Emergency medical transportation may be covered only when approved and arranged by Premium Global Assist; other third-party costs may apply.", estimatedValue: null },
+      { id: "amex-offers-tickets", name: "Amex Offers & Special Ticket Access", description: "Eligible purchase-specific Amex Offers require enrollment. Select presale, reserved and Preferred Tickets are available for purchase, subject to availability.", estimatedValue: null },
+      { id: "venue-collection", name: "American Express Venue Collection", description: "Select venue entrances/fast lanes. Through Dec 31, 2026, enroll one eligible Amex card per member for 10% back on qualifying concessions, up to $250 total; do not count this offer on multiple cards.", estimatedValue: null },
+      { id: "account-tools", name: "Amex Account & Payment Tools", description: "Additional cards, optional spending limits, account managers, year-end summaries and eligible instant card numbers. Send & Split with Venmo/PayPal requires enrollment; Pay It / Plan It available on eligible purchases (Plan It fees apply).", estimatedValue: null },
+      { id: "amex-travel", name: "Amex Travel Booking Benefits", description: "Lowest Hotel Rates Guarantee on qualifying public hotel rates booked through Amex Travel, subject to matching-rate and claim deadlines; excludes FHR/Hotel Collection and package rates. Destination Family offers on eligible cruises/tours vary by provider and require the cardholder to travel.", estimatedValue: null },
+      { id: "welcome-offer", name: "Limited-Time Welcome Offer", description: "Hilton's public offer through Jan 13, 2027: 200,000 bonus points after $6,000 in eligible purchases in the first 6 months. Eligibility restrictions apply; offers vary. One-time bonus, not an annual benefit.", estimatedValue: null }
+    ],
+    earningRates: [
+      { category: "Hilton Properties", detail: "Eligible purchases charged directly by Hilton properties; excludes separate Hilton membership/status points", rate: "14x" },
+      { category: "Flights", detail: "Eligible airfare booked directly with airlines, AmexTravel.com or the Amex Travel App", rate: "7x" },
+      { category: "Car Rentals", detail: "Eligible rentals booked directly with select major car rental companies", rate: "7x" },
+      { category: "U.S. Restaurants", detail: "Eligible U.S. restaurants, including takeout and delivery", rate: "7x" },
+      { category: "Everything Else", detail: "All other eligible purchases", rate: "3x" }
+    ],
+    protections: [
+      { name: "Trip Cancellation / Interruption Insurance", description: "Covered reasons on eligible round trips paid entirely with the card: up to $10,000 per trip and $20,000 per card per 12 consecutive months. Terms and exclusions apply." },
+      { name: "Trip Delay Insurance", description: "Covered delays of more than 6 hours on eligible round trips paid entirely with the card: up to $500 per trip, maximum 2 claims per 12 consecutive months." },
+      { name: "Purchase Protection", description: "Eligible purchases covered against loss, theft or accidental damage for 90 days: up to $10,000 per purchase and $50,000 per calendar year." },
+      HILTON_STANDARD_PROTECTIONS[2],
+      { name: "Cell Phone Protection", description: "Pay the prior month's wireless bill with the card for eligible theft/damage coverage, up to $800 per claim, $50 deductible and 2 approved claims per 12 months. Terms and exclusions apply." },
+      { name: "No Foreign Transaction Fees", description: "No Amex foreign transaction fees on purchases abroad." },
+      HILTON_STANDARD_PROTECTIONS[0],
+      { name: "Baggage Insurance Plan", description: "When the entire common-carrier fare is charged to the card: up to $3,000 combined checked/carry-on baggage, including up to $2,000 checked and $1,000 high-risk items, in excess of carrier coverage. Trip aggregate and state limits apply." },
+      { name: "Return Protection", description: "If a seller refuses an eligible return within 90 days, up to $300 per item and $1,000 per calendar year; excludes shipping/handling. Entire purchase must be charged to the card in the U.S. or its territories." }
+    ]
+  },
+  // As of 2026-10-27: https://www.hilton.com/en/hilton-honors/credit-cards/
+  // https://www.americanexpress.com/us/credit-cards/business/business-credit-cards/hilton-honors/
+  // https://www.americanexpress.com/us/credit-cards/card-application/apply/partner/print/business-card/hil/hilton-honors-american-express-business-credit-card/ep-hil-29102?print=false
+  // Current Business benefits do not include ongoing free-night rewards or Priority Pass.
+  {
+    id: "amex-hilton-business",
+    name: "Hilton Honors American Express Business Card",
+    issuer: "American Express",
+    network: "Amex",
+    annualFee: 195,
+    color: "#35516a",
+    rewardsSummary: "12x Hilton, 5x other purchases up to annual cap, Gold status, $240 Hilton credit",
+    rewardsCurrency: "Hilton Honors points",
+    pointValueCents: 0.5,
+    categories: ["Travel", "Business"],
+    statementCredits: [
+      { id: "hilton-credit", name: "Hilton Credit", description: "Up to $60 each calendar quarter ($240/year) for eligible bookings made through Hilton and purchases charged directly by Hilton portfolio properties. Charge incidentals to your room and pay with the card; third-party bookings excluded.", value: 60, frequency: "quarterly", category: "Travel" }
+    ],
+    perks: [
+      { id: "hilton-gold", name: "Hilton Honors Gold Status", description: "80% bonus on stay Base Points, space-available upgrades and daily food/beverage credit or continental breakfast (brand/region rules apply). Includes Silver benefits such as fifth night free on eligible all-points standard-room stays.", estimatedValue: null },
+      { id: "hilton-diamond-spend", name: "Diamond Status at $40,000 Spend", description: "Spend $40,000 in eligible purchases in a calendar year for Diamond status through the end of the following calendar year.", estimatedValue: null },
+      { id: "national-executive", name: "National Emerald Club Executive Status", description: "Enroll through your Amex account for Executive status, including Executive Area access on qualifying rentals in the U.S. and Canada. Rental terms and availability apply.", estimatedValue: null },
+      { id: "no-fx", name: "No Foreign Transaction Fees", description: "No Amex foreign transaction fees on purchases abroad.", estimatedValue: null },
+      { id: "employee-cards", name: "Employee Cards & Expense Management", description: "Up to 99 employee cards, optional spending limits, account managers, online statements, year-end summaries and expense tools including QuickBooks integration. Eligible employee purchases earn rewards on the basic account.", estimatedValue: null },
+      { id: "global-assist", name: "Global Assist Hotline", description: "24/7 emergency coordination and medical/legal referrals when more than 100 miles from home. Third-party service costs are your responsibility.", estimatedValue: null },
+      { id: "vendor-pay", name: "Vendor Pay by BILL", description: "Enrollment required. Basic plan has no monthly fee for the first user; second user free for 6 months, then $15/month. Advanced plans and check/ACH transactions can incur fees.", estimatedValue: null },
+      { id: "amex-offers-tickets", name: "Amex Offers & Special Ticket Access", description: "Enroll in eligible Amex Offers for purchase-specific rewards; access select presale and reserved tickets, subject to availability and ticket costs.", estimatedValue: null },
+      { id: "venue-collection", name: "American Express Venue Collection", description: "Select venue entrances/fast lanes. Through Dec 31, 2026, enroll one eligible Amex card per member for 10% back on qualifying concessions, up to $250 total; do not count this offer on multiple cards.", estimatedValue: null },
+      { id: "amex-travel", name: "Lowest Hotel Rates Guarantee", description: "On qualifying hotel bookings through Amex Travel, claim a refund of the difference for a matching lower public rate. Matching room/rate conditions and claim deadlines apply; excludes FHR/Hotel Collection and package rates.", estimatedValue: null },
+      { id: "welcome-offer", name: "Limited-Time Welcome Offer", description: "Hilton's public offer through Jan 13, 2027: 150,000 bonus points plus a Free Night Reward after $8,000 in eligible purchases in the first 6 months. Eligibility restrictions apply; offers vary. One-time bonus, not an annual benefit.", estimatedValue: null }
+    ],
+    earningRates: [
+      { category: "Hilton Properties", detail: "Eligible purchases charged directly by Hilton properties; excludes separate Hilton membership/status points", rate: "12x" },
+      { category: "Other Purchases — Within Annual Cap", detail: "First $100,000 of eligible non-Hilton purchases each calendar year; allocate only spending within the cap here", rate: "5x" },
+      { category: "Other Purchases — After Annual Cap", detail: "Eligible non-Hilton purchases above the $100,000 calendar-year cap; allocate only spending above the cap here", rate: "3x" }
+    ],
+    protections: HILTON_PREFERRED_PROTECTIONS
   },
   {
     id: "delta-gold",
