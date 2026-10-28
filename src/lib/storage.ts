@@ -175,9 +175,7 @@ export function useAppState() {
   useEffect(() => {
     try {
       localStorage.setItem(KEY, JSON.stringify(state));
-    } catch {
-      // Keep the tracker usable when browser storage is unavailable or full.
-    }
+    } catch {}
   }, [state]);
 
   const today = () => new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" });

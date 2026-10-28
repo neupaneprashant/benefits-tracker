@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { Card, CardUsageState, StatementCredit, Perk, EarningRate } from "../types";
 import {
   money,
@@ -165,17 +165,6 @@ function OneTimeCredit({
   );
 }
 
-// Keep in-progress typing local, resetting when the saved value changes.
-function useInputDraft(saved: string) {
-  const [draft, setDraft] = useState(saved);
-  const [previous, setPrevious] = useState(saved);
-  if (saved !== previous) {
-    setPrevious(saved);
-    setDraft(saved);
-  }
-  return [draft, setDraft] as const;
-}
-
 /* ---------- Perk Valuation Row ---------- */
 function PerkRow({
   card,
@@ -189,7 +178,9 @@ function PerkRow({
   onSetPerk: (cardId: string, perkId: string, value: number) => void;
 }) {
   const stored = getPerkValue(usage, card.id, perk.id);
-  const [val, setVal] = useInputDraft(stored ? String(stored) : "");
+  const [val, setVal] = useState(stored ? String(stored) : "");
+
+  useEffect(() => { setVal(stored ? String(stored) : ""); }, [stored]);
 
   const commit = (raw: string) => {
     const n = parseFloat(raw);
@@ -234,7 +225,9 @@ function CurrencyWorth({
   onSetPointValue: (cardId: string, cents: number) => void;
 }) {
   const pv = getPointValue(usage, card);
-  const [v, setV] = useInputDraft(String(pv));
+  const [v, setV] = useState(String(pv));
+
+  useEffect(() => { setV(String(pv)); }, [pv]);
 
   const commit = (raw: string) => {
     const n = parseFloat(raw);
@@ -272,7 +265,9 @@ function EarnRateRow({
 }) {
   const key = rateKey(rate);
   const sp = getSpend(usage, card.id, key);
-  const [amt, setAmt] = useInputDraft(sp.amount ? String(sp.amount) : "");
+  const [amt, setAmt] = useState(sp.amount ? String(sp.amount) : "");
+
+  useEffect(() => { setAmt(sp.amount ? String(sp.amount) : ""); }, [sp.amount]);
 
   const period = sp.period || "monthly";
   const pr = parseRate(rate.rate);

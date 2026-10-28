@@ -115,7 +115,7 @@ export default function App() {
           if (!c.categories.includes("Premium")) return false;
         } else {
           // Standard categories matching
-          if (!c.categories.includes(selectedCategory)) return false;
+          if (!c.categories.includes(selectedCategory as any)) return false;
         }
       }
 
@@ -138,11 +138,10 @@ export default function App() {
           return b.annualFee - a.annualFee;
         case "fee-asc":
           return a.annualFee - b.annualFee;
-        case "benefits-desc": {
+        case "benefits-desc":
           const countA = a.statementCredits.length + a.perks.length;
           const countB = b.statementCredits.length + b.perks.length;
           return countB - countA;
-        }
         default:
           return 0;
       }
