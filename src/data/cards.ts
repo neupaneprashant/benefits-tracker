@@ -23,6 +23,13 @@ const CHASE_ULTIMATE_PROTECTIONS: Protection[] = [
   { name: "No Foreign Transaction Fees", description: "Save on exchange fees abroad." }
 ];
 
+const RITZ_CARLTON_PROTECTIONS: Protection[] = [
+  ...CHASE_ULTIMATE_PROTECTIONS.filter((p) => p.name !== "Trip Delay Reimbursement"),
+  { name: "Trip Delay Reimbursement", description: "Delays of 6+ hours or overnight: up to $500 per ticket." },
+  { name: "Lost Luggage Reimbursement", description: "Up to $3,000 per passenger for checked or carry-on bags lost or damaged by the carrier." },
+  { name: "Baggage Delay Insurance", description: "Bags delayed 6+ hours: up to $100 per day for 5 days for essential purchases." }
+];
+
 const AMEX_PREMIUM_PROTECTIONS: Protection[] = [
   { name: "Trip Cancellation / Interruption Insurance", description: "Up to $10,000 per trip / $20,000 per year." },
   { name: "Trip Delay Insurance", description: "Delays 6+ hours: up to $500 per trip (up to 2 times per 12 months)." },
@@ -506,7 +513,7 @@ export const CARDS: Card[] = [
       { category: "Car Rentals", detail: "Car rental agencies", rate: "3x" },
       { category: "Everything Else", detail: "All other spend", rate: "2x" }
     ],
-    protections: CHASE_ULTIMATE_PROTECTIONS
+    protections: RITZ_CARLTON_PROTECTIONS
   },
 
   // ================= AMERICAN EXPRESS =================
