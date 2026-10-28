@@ -475,6 +475,39 @@ export const CARDS: Card[] = [
     ],
     protections: PREFERRED_PROTECTIONS
   },
+  {
+    id: "ritz-carlton",
+    name: "The Ritz-Carlton Credit Card",
+    issuer: "Chase",
+    network: "Visa",
+    annualFee: 450,
+    color: "#0f172a",
+    rewardsSummary: "85K Free Night Award, $300 airline credit, Priority Pass & Sapphire Lounge access, Gold Elite status",
+    rewardsCurrency: "Marriott Bonvoy® points",
+    pointValueCents: 0.8,
+    categories: ["Travel", "Premium", "Lifestyle"],
+    note: "Available via product change from an eligible Chase Marriott Bonvoy card held for at least 12 months.",
+    statementCredits: [
+      { id: "airline-credit", name: "$300 Annual Airline Incidental Credit", description: "Up to $300 in statement credits each calendar year for qualifying airline incidental charges (baggage fees, seat upgrades, lounge passes; request via Chase customer service).", value: 300, frequency: "annual", category: "Travel" },
+      { id: "global-entry", name: "Global Entry / PreCheck / NEXUS Credit", description: "Application fee credit once every 4 years (up to $120 for Global Entry).", value: 120, frequency: "one-time", category: "Travel", cycleYears: 4 }
+    ],
+    perks: [
+      { id: "free-night-85k", name: "Annual Free Night Award (85K)", description: "Valid for one night at participating Marriott Bonvoy hotels up to 85,000 points (can top off with up to 15,000 points from member balance).", estimatedValue: 350 },
+      { id: "priority-pass", name: "Priority Pass Select & Sapphire Lounges", description: "Unlimited airport lounge access for cardholder and up to 2 guests, including Chase Sapphire Lounges. Complimentary authorized users also receive Priority Pass.", estimatedValue: 429 },
+      { id: "marriott-gold", name: "Marriott Bonvoy Gold Elite Status", description: "Complimentary Gold status: 25% bonus points on stays, 2 p.m. late checkout, room upgrades. Spend $75,000/yr for Platinum Elite.", estimatedValue: 100 },
+      { id: "elite-nights-15", name: "15 Elite Night Credits", description: "15 Elite Night Credits deposited into your Marriott Bonvoy account annually toward higher elite status tiers.", estimatedValue: 150 },
+      { id: "club-upgrades", name: "Three Ritz-Carlton Club Level Upgrades", description: "Three electronic Club Level upgrade certificates per year valid on eligible paid stays up to 7 consecutive nights at participating The Ritz-Carlton hotels.", estimatedValue: null },
+      { id: "property-credit", name: "$100 Ritz-Carlton / St. Regis Property Credit", description: "Up to $100 hotel credit per paid stay of 2+ nights at participating The Ritz-Carlton and St. Regis properties on qualifying luxury rates for dining, spa, and recreational activities.", estimatedValue: null }
+    ],
+    earningRates: [
+      { category: "Marriott Hotels", detail: "Spent at participating Marriott Bonvoy properties", rate: "6x" },
+      { category: "Dining", detail: "Restaurants worldwide", rate: "3x" },
+      { category: "Flights", detail: "Booked directly with airlines", rate: "3x" },
+      { category: "Car Rentals", detail: "Car rental agencies", rate: "3x" },
+      { category: "Everything Else", detail: "All other spend", rate: "2x" }
+    ],
+    protections: CHASE_ULTIMATE_PROTECTIONS
+  },
 
   // ================= AMERICAN EXPRESS =================
   {
