@@ -28,7 +28,7 @@ Follow these steps to audit your credit card portfolio and determine your net va
 
 ### 1. Assemble Your Wallet
 * Go to the **Browse Cards** tab at the top.
-* Search across a database of **100 premium U.S. credit cards** from Chase, Amex, Capital One, Citi, Wells Fargo, and more.
+* Search across a database of **100+ premium U.S. credit cards** from Chase, Amex, Capital One, Citi, Wells Fargo, and more.
 * Use the **Issuer Selector** or **Category Chips** (Travel, Cash Back, Lifestyle, Business, Premium) to filter cards.
 * Click **+ Add to my cards** to add them to your active tracker.
 
